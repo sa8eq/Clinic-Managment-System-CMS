@@ -1,0 +1,9 @@
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\bin\Debug\CMSLogic.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\bin\Debug\CMSLogic.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\bin\Debug\CMSData.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\bin\Debug\CMSData.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.csproj.AssemblyReference.cache
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.csproj.CoreCompileInputs.cache
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.csproj.Up2Date
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.pdb

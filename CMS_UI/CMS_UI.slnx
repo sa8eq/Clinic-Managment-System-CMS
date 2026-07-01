@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="../CMSData/CMSData.csproj" Id="557d7d7d-9949-468c-928f-9e6f439ddfdd" />
+  <Project Path="../CMSLogic/CMSLogic.csproj" Id="646b9317-5c3b-4e04-a4b2-017355fa4f4d" />
+  <Project Path="CMSUI.csproj" Id="0f4c29d3-fb6a-46eb-b3ba-3496bd93622b" />
+</Solution>
