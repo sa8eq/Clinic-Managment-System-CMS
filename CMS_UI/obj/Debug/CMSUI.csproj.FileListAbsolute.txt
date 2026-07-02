@@ -1,0 +1,17 @@
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMS_UI.exe.config
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMS_UI.exe
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMS_UI.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMSLogic.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMSData.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMSLogic.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMSData.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMSUI.csproj.AssemblyReference.cache
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.AdminDashboard.resources
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.Properties.Resources.resources
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMSUI.csproj.GenerateResource.cache
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMSUI.csproj.CoreCompileInputs.cache
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMSUI.csproj.Up2Date
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.exe
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.Users.ManageUsers.resources
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.Users.AddEditUser.resources

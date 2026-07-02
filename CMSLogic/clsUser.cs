@@ -9,7 +9,6 @@ namespace CMSLogic
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
 
-        // الخصائص الخاصة بجدول المستخدمين
         public int UserID { get; set; }
         public int PersonID { get; set; }
         public string Username { get; set; }
@@ -17,10 +16,9 @@ namespace CMSLogic
         public int RoleID { get; set; }
         public bool IsActive { get; set; }
 
-        // الـ Composition: كائن كامل من كلاس الأشخاص مركب داخل كلاس المستخدم
         public clsPerson PersonInfo { get; set; }
-
-        // 1. المشيد الافتراضي - لحالة إضافة مستخدم جديد
+        public clsRole UserRole { get; private set; }
+     
         public clsUser()
         {
             this.UserID = -1;
@@ -30,13 +28,11 @@ namespace CMSLogic
             this.RoleID = -1;
             this.IsActive = true;
 
-            // تهيئة كائن الشخص ليكون جاهزاً لاستقبال البيانات الشخصية من واجهة المستخدم
             this.PersonInfo = new clsPerson();
-
+            this.UserRole = new clsRole();
             Mode = enMode.AddNew;
         }
 
-        // 2. المشيد الخاص - لحالة جلب بيانات مستخدم موجود مسبقاً
         private clsUser(int UserID, int PersonID, string Username, string PasswordHash, int RoleID, bool IsActive)
         {
             this.UserID = UserID;
@@ -46,26 +42,22 @@ namespace CMSLogic
             this.RoleID = RoleID;
             this.IsActive = IsActive;
 
-            // جلب بيانات الشخص التابع لهذا المستخدم بذكاء من كلاس البزنس الخاص بالأشخاص
             this.PersonInfo = clsPerson.Find(PersonID);
-
+            this.UserRole = clsRole.Find(RoleID);
             Mode = enMode.Update;
         }
 
-        // دالة داخلية لإضافة المستخدم فقط لجدول Users
         private bool _AddNewUser()
         {
             this.UserID = clsUsersData.AddNewUser(this.PersonID, this.Username, this.PasswordHash, this.RoleID, this.IsActive);
             return (this.UserID != -1);
         }
 
-        // دالة داخلية لتعديل المستخدم فقط في جدول Users
         private bool _UpdateUser()
         {
             return clsUsersData.UpdateUser(this.UserID, this.PersonID, this.Username, this.PasswordHash, this.RoleID, this.IsActive);
         }
 
-        // البحث عن مستخدم بواسطة الـ ID
         public static clsUser Find(int UserID)
         {
             int PersonID = -1, RoleID = -1;
@@ -80,20 +72,15 @@ namespace CMSLogic
                 return null;
         }
 
-        // حفظ البيانات (حفظ الشخص أولاً، ثم ربطه بالمستخدم وحفظه)
         public bool Save()
         {
-            // الخطوة 1: حفظ بيانات الشخص التابع للمستخدم أولاً
-            // كائن الـ PersonInfo سيتولى داخلياً معرفة حالته (إضافة أم تعديل) ويقوم بالحفظ
             if (!this.PersonInfo.Save())
             {
-                return false; // إذا حدثت مشكلة في حفظ بيانات الشخص، يتوقف أمر الحفظ فوراً حمايةً للبيانات
+                return false; 
             }
 
-            // الخطوة 2: بعد نجاح حفظ الشخص، نأخذ الـ PersonID المولد تلقائياً ونربطه بالمستخدم
             this.PersonID = this.PersonInfo.PersonID;
 
-            // الخطوة 3: حفظ بيانات المستخدم الآن بناءً على الـ Mode
             switch (Mode)
             {
                 case enMode.AddNew:
@@ -110,13 +97,11 @@ namespace CMSLogic
             return false;
         }
 
-        // حذف المستخدم
         public static bool Delete(int UserID)
         {
             return clsUsersData.DeleteUser(UserID);
         }
 
-        // جلب قائمة المستخدمين الشاملة بالأسماء من الـ View
         public static DataTable GetAllUsers()
         {
             return clsUsersData.GetAllUsers();
