@@ -7,7 +7,7 @@ namespace CMSData
     public static class clsPersonsData
     {
         public static bool GetPersonByID(int PersonID, ref string FirstName, ref string SecondName, ref string ThirdName,
-                                         ref string LastName, ref short Gender, ref DateTime DateOfBirth,
+                                         ref string LastName, ref byte Gender, ref DateTime DateOfBirth,
                                          ref string Phone, ref string Email, ref string Address, ref DateTime? CreatedAt)
         {
             bool isFound = false;
@@ -31,7 +31,7 @@ namespace CMSData
 
                                 FirstName = (string)reader["FirstName"];
                                 LastName = (string)reader["LastName"];
-                                Gender = Convert.ToInt16(reader["Gender"]);
+                                Gender = (byte)(reader["Gender"]);
                                 DateOfBirth = (DateTime)reader["DateOfBirth"];
                                 Phone = (string)reader["Phone"];
                                 Email = (string)reader["Email"];
@@ -46,8 +46,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // يمكنك هنا تسجيل الخطأ (Logger) إذا لزم الأمر
-                        isFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -91,7 +90,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // إدارة الخطأ
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -128,7 +127,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -153,7 +152,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -183,7 +182,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // إدارة الخطأ
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -192,7 +191,7 @@ namespace CMSData
         }
         public static bool GetPersonByEmail(string Email, ref int PersonID, ref string FirstName,
                                          ref string SecondName, ref string ThirdName,
-                                         ref string LastName, ref short Gender,
+                                         ref string LastName, ref byte Gender,
                                          ref DateTime DateOfBirth, ref string Phone,
                                          ref string Address, ref DateTime? CreatedAt)
         {
@@ -218,7 +217,7 @@ namespace CMSData
                                 PersonID = (int)reader["PersonID"];
                                 FirstName = (string)reader["FirstName"];
                                 LastName = (string)reader["LastName"];
-                                Gender = Convert.ToInt16(reader["Gender"]);
+                                Gender = (byte)(reader["Gender"]);
                                 DateOfBirth = (DateTime)reader["DateOfBirth"];
                                 Phone = (string)reader["Phone"];
                                 Address = (string)reader["Address"];
@@ -229,9 +228,9 @@ namespace CMSData
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -259,9 +258,9 @@ namespace CMSData
                             IsFound = Convert.ToBoolean(Result);
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -289,9 +288,9 @@ namespace CMSData
                             IsFound = Convert.ToBoolean(Result);
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }

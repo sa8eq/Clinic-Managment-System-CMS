@@ -40,7 +40,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        isFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -79,7 +79,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // إدارة الخطأ
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -113,7 +113,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -140,7 +140,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -172,7 +172,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // إدارة الخطأ
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -216,7 +216,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -260,7 +260,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -290,7 +290,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -320,7 +320,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }

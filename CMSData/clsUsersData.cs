@@ -6,7 +6,6 @@ namespace CMSData
 {
     public static class clsUsersData
     {
-        // 1. جلب بيانات مستخدم بواسطة المعرف (FindByID)
         public static bool GetUserByID(int UserID, ref int PersonID, ref string Username,
                                        ref string PasswordHash, ref int RoleID, ref bool IsActive)
         {
@@ -38,7 +37,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        isFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -46,7 +45,6 @@ namespace CMSData
             return isFound;
         }
 
-        // 2. إضافة مستخدم جديد (Insert) وإعادة الـ ID المولد
         public static int AddNewUser(int PersonID, string Username, string PasswordHash, int RoleID, bool IsActive)
         {
             int UserID = -1;
@@ -75,7 +73,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // إدارة الخطأ هنا عند الحاجة
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -83,7 +81,6 @@ namespace CMSData
             return UserID;
         }
 
-        // 3. تعديل بيانات مستخدم (Update)
         public static bool UpdateUser(int UserID, int PersonID, string Username, string PasswordHash, int RoleID, bool IsActive)
         {
             int rowsAffected = 0;
@@ -108,7 +105,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -116,7 +113,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 4. حذف مستخدم بواسطة المعرف (Delete)
         public static bool DeleteUser(int UserID)
         {
             int rowsAffected = 0;
@@ -135,7 +131,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); new Exception(ex.Message);
                     }
                 }
             }
@@ -143,7 +139,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 5. جلب جدول جميع المستخدمين (والذي يقرأ من الـ View الشاملة v_UsersList)
         public static DataTable GetAllUsers()
         {
             DataTable dt = new DataTable();
@@ -167,7 +162,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // إدارة الخطأ
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -207,7 +202,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -247,7 +242,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -277,7 +272,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -307,7 +302,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }

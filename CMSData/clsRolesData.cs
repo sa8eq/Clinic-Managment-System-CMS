@@ -35,7 +35,8 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ; 
+
                     }
                 }
             }
@@ -62,7 +63,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return null;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }

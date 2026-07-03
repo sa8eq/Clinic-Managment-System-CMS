@@ -36,7 +36,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        isFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -68,7 +68,7 @@ namespace CMSData
                             InsuranceCompanyID = insertedID;
                         }
                     }
-                    catch (Exception ex) { }
+                    catch (Exception ex) { throw new Exception(ex.Message); ; }
                 }
             }
 
@@ -98,7 +98,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -125,7 +125,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -152,7 +152,7 @@ namespace CMSData
                             if (reader.HasRows) dt.Load(reader);
                         }
                     }
-                    catch (Exception ex) { }
+                    catch (Exception ex) { throw new Exception(ex.Message); ; }
                 }
             }
 
@@ -181,7 +181,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }
@@ -223,7 +223,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        IsFound = false;
+                        throw new Exception(ex.Message); ;
                     }
                 }
             }

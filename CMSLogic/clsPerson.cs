@@ -14,7 +14,7 @@ namespace CMSLogic
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
-        public short Gender { get; set; }
+        public byte Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
@@ -44,7 +44,7 @@ namespace CMSLogic
         }
 
         private clsPerson(int PersonID, string FirstName, string SecondName, string ThirdName,
-                          string LastName, short Gender, DateTime DateOfBirth, string Phone,
+                          string LastName, byte Gender, DateTime DateOfBirth, string Phone,
                           string Email, string Address, DateTime? CreatedAt)
         {
             this.PersonID = PersonID;
@@ -80,7 +80,7 @@ namespace CMSLogic
         public static clsPerson Find(int PersonID)
         {
             string FirstName = "", SecondName = "", ThirdName = "", LastName = "", Phone = "", Email = "", Address = "";
-            short Gender = 0;
+            byte Gender = 0;
             DateTime DateOfBirth = DateTime.Now;
             DateTime? CreatedAt = null;
 
@@ -126,7 +126,7 @@ namespace CMSLogic
         {
             int PersonID = -1;
             string FirstName = "", SecondName = "", ThirdName = "", LastName = "", Phone = "", Address = "";
-            short Gender = 0;
+            byte Gender = 0;
             DateTime DateOfBirth = DateTime.Now;
             DateTime? CreatedAt = null;
 
