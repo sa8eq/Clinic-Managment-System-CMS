@@ -115,7 +115,10 @@ namespace CMS_UI.Users
                 {
                     string Message = (_Mode == enMode.AddNew)? "User Added Successfully": "User Updated Successfully";
                     MessageBox.Show($"{Message}\n\nUser ID: {_User.UserID}\nUsername: {_User.Username}","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    LockTextBoxes();
+                    UserInfo frm = new UserInfo(_User.UserID);
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
                 }
                 else
                 {

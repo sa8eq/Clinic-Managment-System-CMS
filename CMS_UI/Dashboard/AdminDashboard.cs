@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CMSLogic.clsRole;
 
 namespace CMS_UI
 {
@@ -19,6 +20,8 @@ namespace CMS_UI
             InitializeComponent();
         }
 
+        
+        
         public void ReLoadForm()
         {
             lblDate.Text = DateTime.Now.ToShortDateString();
@@ -27,9 +30,51 @@ namespace CMS_UI
             lblRoleName.Text = clsCurrentUser.CurrentUser.UserRole.RoleName;
         }
 
+        private enum enRoles { Admin = 1, Receptionist = 2, Doctor = 3 }
+        private void ApplyUserPermissions()
+        {
+            enRoles currentRole = (enRoles)clsCurrentUser.CurrentUser.RoleID;
+            if (currentRole == enRoles.Admin)
+            {
+                return;
+            }
+            if (currentRole == enRoles.Receptionist)
+            {
+                btnUsers.Enabled = false;
+                btnDoctors.Enabled = false;
+                btnSettings.Enabled = false;
+                btnReports.Enabled = false;
+                btnVisits.Enabled = false;
+
+                btnUsers.Visible = false;
+                btnDoctors.Visible = false;
+                btnSettings.Visible = false;
+                btnReports.Visible = false;
+                btnVisits.Visible = false;
+            }
+
+            else if (currentRole == enRoles.Doctor)
+            {
+                btnUsers.Enabled = false;
+                btnDoctors.Enabled = false;
+                btnInvoices.Enabled = false;
+                btnSettings.Enabled = false;
+                btnReports.Enabled = false;
+                btnInsuranceCompanies.Enabled = false;
+
+                btnUsers.Visible = false;
+                btnDoctors.Visible = false;
+                btnInvoices.Visible = false;
+                btnSettings.Visible = false;
+                btnReports.Visible = false;
+                btnInsuranceCompanies.Visible = false;
+            }
+        }
         private void AdminDashboard_Load(object sender, EventArgs e)
         {
             ReLoadForm();
+
+            ApplyUserPermissions();
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -40,7 +85,9 @@ namespace CMS_UI
         private void btnUsers_Click(object sender, EventArgs e)
         {
             ManageUsers frm = new ManageUsers();
+            this.Hide();
             frm.ShowDialog();
+            this.Show();
             ReLoadForm();
         }
     }

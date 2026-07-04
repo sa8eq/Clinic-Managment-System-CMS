@@ -256,7 +256,7 @@ namespace CMSData
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-                using (SqlCommand command = new SqlCommand("SP_IsUserExistsByUsername", connection))
+                using (SqlCommand command = new SqlCommand("SP_IsUsernameExists", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@Username", Username);
