@@ -77,6 +77,18 @@
     <Compile Include="Global\clsValidate.cs" />
     <Compile Include="Global\clsPasswordHasher.cs" />
     <Compile Include="Global\clsRegistry.cs" />
+    <Compile Include="InsuranceCompanies\AddEditInsuranceCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsuranceCompanies\AddEditInsuranceCompany.Designer.cs">
+      <DependentUpon>AddEditInsuranceCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsuranceCompanies\ManageInsuraanceCompanies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsuranceCompanies\ManageInsuraanceCompanies.Designer.cs">
+      <DependentUpon>ManageInsuraanceCompanies.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsuranceCompanies\AddEditInsuranceCompany.resx">
+      <DependentUpon>AddEditInsuranceCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsuranceCompanies\ManageInsuraanceCompanies.resx">
+      <DependentUpon>ManageInsuraanceCompanies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -167,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\insurance-companies.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,6 @@ namespace CMSData
 {
     public static class clsInsuranceCompaniesData
     {
-        // 1. جلب بيانات شركة تأمين بواسطة المعرف
         public static bool GetInsuranceCompanyByID(int InsuranceCompanyID, ref string CompanyName,
                                                    ref string ContactPhone, ref string ContactEmail, ref decimal CoveragePercentage)
         {
@@ -43,7 +42,6 @@ namespace CMSData
 
             return isFound;
         }
-        // 2. إضافة شركة جديدة
         public static int AddNewInsuranceCompany(string CompanyName, string ContactPhone, string ContactEmail, decimal CoveragePercentage)
         {
             int InsuranceCompanyID = -1;
@@ -75,7 +73,6 @@ namespace CMSData
             return InsuranceCompanyID;
         }
 
-        // 3. تعديل شركة
         public static bool UpdateInsuranceCompany(int InsuranceCompanyID, string CompanyName, string ContactPhone, string ContactEmail, decimal CoveragePercentage)
         {
             int rowsAffected = 0;
@@ -106,7 +103,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 4. حذف شركة
         public static bool DeleteInsuranceCompany(int InsuranceCompanyID)
         {
             int rowsAffected = 0;
@@ -133,7 +129,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 5. جلب كل الشركات من الفيو
         public static DataTable GetAllInsuranceCompanies()
         {
             DataTable dt = new DataTable();
@@ -165,10 +160,70 @@ namespace CMSData
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-                using (SqlCommand command = new SqlCommand("SP_IsInsuranceCompanyExistsByName", connection))
+                using (SqlCommand command = new SqlCommand("SP_IsInsuranceCompanyExists", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@CompanyName", CompanyName);
+
+                    try
+                    {
+                        connection.Open();
+
+                        object Result = command.ExecuteScalar();
+
+                        if (Result != null)
+                            IsFound = Convert.ToBoolean(Result);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message); ;
+                    }
+                }
+            }
+
+            return IsFound;
+        }
+
+        public static bool IsInsuranceCompanyExistByEmail(string Email)
+        {
+            bool IsFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_IsInsuranceCompanyExistsByEmail", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ContactEmail", Email);
+
+                    try
+                    {
+                        connection.Open();
+
+                        object Result = command.ExecuteScalar();
+
+                        if (Result != null)
+                            IsFound = Convert.ToBoolean(Result);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message); ;
+                    }
+                }
+            }
+
+            return IsFound;
+        }
+
+        public static bool IsInsuranceCompanyExistsByPhone(string Phone)
+        {
+            bool IsFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_IsInsuranceCompanyExistsByPhone", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@ContactPhone", Phone);
 
                     try
                     {

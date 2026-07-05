@@ -15,7 +15,6 @@ namespace CMSLogic
         public string ContactEmail { get; set; }
         public decimal CoveragePercentage { get; set; }
 
-        // المشيد الافتراضي
         public clsInsuranceCompany()
         {
             this.InsuranceCompanyID = -1;
@@ -27,7 +26,6 @@ namespace CMSLogic
             Mode = enMode.AddNew;
         }
 
-        // المشيد الخاص
         private clsInsuranceCompany(int InsuranceCompanyID, string CompanyName, string ContactPhone, string ContactEmail, decimal CoveragePercentage)
         {
             this.InsuranceCompanyID = InsuranceCompanyID;
@@ -50,7 +48,6 @@ namespace CMSLogic
             return clsInsuranceCompaniesData.UpdateInsuranceCompany(this.InsuranceCompanyID, this.CompanyName, this.ContactPhone, this.ContactEmail, this.CoveragePercentage);
         }
 
-        // دالة البحث واسترجاع الكائن
         public static clsInsuranceCompany Find(int InsuranceCompanyID)
         {
             string CompanyName = "", ContactPhone = "", ContactEmail = "";
@@ -64,7 +61,6 @@ namespace CMSLogic
                 return null;
         }
 
-        // دالة الحفظ الذكية
         public bool Save()
         {
             switch (Mode)
@@ -118,6 +114,16 @@ namespace CMSLogic
         public static bool ExistsByCompanyName(string CompanyName)
         {
             return clsInsuranceCompaniesData.IsInsuranceCompanyExistsByName(CompanyName);
+        }
+
+        public static bool ExistByCompanyEmail(string Email)
+        {
+            return clsInsuranceCompaniesData.IsInsuranceCompanyExistByEmail(Email);
+        }
+
+        public static bool ExistByCompanyPhone(string Phone)
+        {
+            return clsInsuranceCompaniesData.IsInsuranceCompanyExistsByPhone(Phone);
         }
     }
 }

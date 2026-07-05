@@ -1,4 +1,5 @@
 ﻿using CMS_UI.Global;
+using CMS_UI.InsuranceCompanies;
 using CMS_UI.Users;
 using System;
 using System.Collections.Generic;
@@ -85,6 +86,15 @@ namespace CMS_UI
         private void btnUsers_Click(object sender, EventArgs e)
         {
             ManageUsers frm = new ManageUsers();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            ReLoadForm();
+        }
+
+        private void btnInsuranceCompanies_Click(object sender, EventArgs e)
+        {
+            ManageInsuraanceCompanies frm = new ManageInsuraanceCompanies();
             this.Hide();
             frm.ShowDialog();
             this.Show();

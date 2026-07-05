@@ -34,11 +34,11 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
+            this.btnDoctors = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnInvoices = new System.Windows.Forms.Button();
             this.btnVisits = new System.Windows.Forms.Button();
             this.btnAppointments = new System.Windows.Forms.Button();
-            this.btnDoctors = new System.Windows.Forms.Button();
             this.btnPatients = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblRoleName = new System.Windows.Forms.Label();
@@ -94,6 +94,7 @@
             this.btnInsuranceCompanies.TabIndex = 12;
             this.btnInsuranceCompanies.Text = "Insurance Companies";
             this.btnInsuranceCompanies.UseVisualStyleBackColor = true;
+            this.btnInsuranceCompanies.Click += new System.EventHandler(this.btnInsuranceCompanies_Click);
             // 
             // btnLogOut
             // 
@@ -125,6 +126,16 @@
             this.btnReports.TabIndex = 9;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = true;
+            // 
+            // btnDoctors
+            // 
+            this.btnDoctors.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDoctors.Location = new System.Drawing.Point(13, 221);
+            this.btnDoctors.Name = "btnDoctors";
+            this.btnDoctors.Size = new System.Drawing.Size(196, 36);
+            this.btnDoctors.TabIndex = 5;
+            this.btnDoctors.Text = "Doctors";
+            this.btnDoctors.UseVisualStyleBackColor = true;
             // 
             // btnUsers
             // 
@@ -166,16 +177,6 @@
             this.btnAppointments.TabIndex = 6;
             this.btnAppointments.Text = "Appointments";
             this.btnAppointments.UseVisualStyleBackColor = true;
-            // 
-            // btnDoctors
-            // 
-            this.btnDoctors.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoctors.Location = new System.Drawing.Point(13, 221);
-            this.btnDoctors.Name = "btnDoctors";
-            this.btnDoctors.Size = new System.Drawing.Size(196, 36);
-            this.btnDoctors.TabIndex = 5;
-            this.btnDoctors.Text = "Doctors";
-            this.btnDoctors.UseVisualStyleBackColor = true;
             // 
             // btnPatients
             // 

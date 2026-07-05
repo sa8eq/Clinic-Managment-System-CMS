@@ -73,6 +73,16 @@ namespace CMS_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap insurance_companies {
+            get {
+                object obj = ResourceManager.GetObject("insurance-companies", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap medical_logo {
             get {
                 object obj = ResourceManager.GetObject("medical_logo", resourceCulture);
