@@ -1,5 +1,6 @@
 ﻿using CMS_UI.Global;
 using CMS_UI.InsuranceCompanies;
+using CMS_UI.Patients;
 using CMS_UI.Users;
 using System;
 using System.Collections.Generic;
@@ -95,6 +96,15 @@ namespace CMS_UI
         private void btnInsuranceCompanies_Click(object sender, EventArgs e)
         {
             ManageInsuraanceCompanies frm = new ManageInsuraanceCompanies();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            ReLoadForm();
+        }
+
+        private void btnPatients_Click(object sender, EventArgs e)
+        {
+            ManagePatients frm = new ManagePatients();
             this.Hide();
             frm.ShowDialog();
             this.Show();

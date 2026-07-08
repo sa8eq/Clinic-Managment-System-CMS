@@ -6,7 +6,6 @@ namespace CMSData
 {
     public static class clsPatientsData
     {
-        // 1. جلب بيانات مريض بواسطة المعرف (FindByID)
         public static bool GetPatientByID(int PatientID, ref int PersonID, ref string BloodType,
                                           ref int? InsuranceCompanyID, ref string InsurancePolicyNumber, ref string EmergencyContactPhone)
         {
@@ -30,7 +29,6 @@ namespace CMSData
 
                                 PersonID = (int)reader["PersonID"];
 
-                                // معالجة الحقول التي تقبل قيم فارغة (Null) عند القراءة
                                 BloodType = reader["BloodType"] == DBNull.Value ? "" : (string)reader["BloodType"];
                                 InsuranceCompanyID = reader["InsuranceCompanyID"] == DBNull.Value ? (int?)null : (int)reader["InsuranceCompanyID"];
                                 InsurancePolicyNumber = reader["InsurancePolicyNumber"] == DBNull.Value ? "" : (string)reader["InsurancePolicyNumber"];
@@ -48,7 +46,6 @@ namespace CMSData
             return isFound;
         }
 
-        // 2. إضافة مريض جديد (Insert) وإعادة الـ ID المولد
         public static int AddNewPatient(int PersonID, string BloodType, int? InsuranceCompanyID, string InsurancePolicyNumber, string EmergencyContactPhone)
         {
             int PatientID = -1;
@@ -61,7 +58,6 @@ namespace CMSData
 
                     command.Parameters.AddWithValue("@PersonID", PersonID);
 
-                    // معالجة الحقول الاختيارية عند الإرسال لقاعدة البيانات
                     command.Parameters.AddWithValue("@BloodType", string.IsNullOrEmpty(BloodType) ? (object)DBNull.Value : BloodType);
                     command.Parameters.AddWithValue("@InsuranceCompanyID", InsuranceCompanyID.HasValue ? (object)InsuranceCompanyID.Value : DBNull.Value);
                     command.Parameters.AddWithValue("@InsurancePolicyNumber", string.IsNullOrEmpty(InsurancePolicyNumber) ? (object)DBNull.Value : InsurancePolicyNumber);
@@ -87,7 +83,6 @@ namespace CMSData
             return PatientID;
         }
 
-        // 3. تعديل بيانات مريض (Update)
         public static bool UpdatePatient(int PatientID, int PersonID, string BloodType, int? InsuranceCompanyID, string InsurancePolicyNumber, string EmergencyContactPhone)
         {
             int rowsAffected = 0;
@@ -121,7 +116,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 4. حذف مريض بواسطة المعرف (Delete)
         public static bool DeletePatient(int PatientID)
         {
             int rowsAffected = 0;
@@ -148,7 +142,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 5. جلب جدول جميع المرضى (من الـ View الشاملة v_PatientsList)
         public static DataTable GetAllPatients()
         {
             DataTable dt = new DataTable();
