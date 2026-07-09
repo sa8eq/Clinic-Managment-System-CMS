@@ -49,6 +49,9 @@ namespace CMS_UI.Patients
 
                 lblCount.Text = '#' + dataGridView1.Rows.Count.ToString();
             }
+
+            cmbFilterBy.SelectedItem = "None";
+            txtFilter.Enabled = false;
         }
 
         private void btnAddNewPatient_Click(object sender, EventArgs e)
@@ -90,6 +93,69 @@ namespace CMS_UI.Patients
             frm.ShowDialog();
             this.Show();
             Reload();
+        }
+
+        private void showPatientInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.Index < 0)
+            {
+
+                MessageBox.Show("Please select a patient to edit.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+
+            }
+
+            int selectedID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["PatientID"].Value);
+            PatientInfo frm = new PatientInfo(selectedID);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void cmbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbFilterBy.SelectedItem == "None")
+            {
+                txtFilter.Enabled = false;
+            }
+            else
+            {
+                txtFilter.Enabled = true;
+            }
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.DataSource == null) return;
+
+            string columnName = cmbFilterBy.SelectedItem.ToString();
+            string filterText = txtFilter.Text.Trim().Replace("'", "''");
+
+            if (columnName == "Name")
+            {
+                columnName = "FullName";
+            }
+
+            if (string.IsNullOrEmpty(filterText))
+            {
+                ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = "";
+            }
+            else if (columnName == "PatientID")
+            {
+                if (int.TryParse(filterText, out int id))
+                {
+                    ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"PatientID = {id}";
+                }
+                else
+                {
+                    ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = "PatientID = -1";
+                }
+            }
+            else
+            {
+                ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"{columnName} LIKE '%{filterText}%'";
+            }
         }
     }
 }

@@ -49,6 +49,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCount = new System.Windows.Forms.Label();
+            this.txtFilter = new System.Windows.Forms.TextBox();
+            this.cmbFilterBy = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -113,13 +116,14 @@
             this.toolStripSeparator3,
             this.invoicesAndPaymentsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(224, 220);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(224, 198);
             // 
             // showPatientInformationToolStripMenuItem
             // 
             this.showPatientInformationToolStripMenuItem.Name = "showPatientInformationToolStripMenuItem";
             this.showPatientInformationToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.showPatientInformationToolStripMenuItem.Text = "Show Patient Information";
+            this.showPatientInformationToolStripMenuItem.Click += new System.EventHandler(this.showPatientInformationToolStripMenuItem_Click);
             // 
             // editPatientInformationToolStripMenuItem
             // 
@@ -226,11 +230,45 @@
             this.lblCount.TabIndex = 6;
             this.lblCount.Text = "###";
             // 
+            // txtFilter
+            // 
+            this.txtFilter.Location = new System.Drawing.Point(232, 114);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(124, 20);
+            this.txtFilter.TabIndex = 7;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            // 
+            // cmbFilterBy
+            // 
+            this.cmbFilterBy.FormattingEnabled = true;
+            this.cmbFilterBy.Items.AddRange(new object[] {
+            "None",
+            "PatientID",
+            "Name"});
+            this.cmbFilterBy.Location = new System.Drawing.Point(96, 114);
+            this.cmbFilterBy.Name = "cmbFilterBy";
+            this.cmbFilterBy.Size = new System.Drawing.Size(121, 21);
+            this.cmbFilterBy.TabIndex = 8;
+            this.cmbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cmbFilterBy_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Filter By: ";
+            // 
             // ManagePatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 527);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cmbFilterBy);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
@@ -274,5 +312,8 @@
         private System.Windows.Forms.ToolStripMenuItem invoicesAndPaymentsToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.ComboBox cmbFilterBy;
+        private System.Windows.Forms.Label label3;
     }
 }
