@@ -6,7 +6,6 @@ namespace CMSData
 {
     public static class clsDoctorsData
     {
-        // 1. جلب بيانات طبيب بواسطة المعرف (FindByID)
         public static bool GetDoctorByID(int DoctorID, ref int PersonID, ref int SpecialtyID,
                                          ref string LicenseNumber, ref DateTime HireDate, ref bool IsActive)
         {
@@ -46,7 +45,6 @@ namespace CMSData
             return isFound;
         }
 
-        // 2. إضافة طبيب جديد (Insert) وإعادة الـ ID المولد
         public static int AddNewDoctor(int PersonID, int SpecialtyID, string LicenseNumber, DateTime HireDate, bool IsActive)
         {
             int DoctorID = -1;
@@ -83,7 +81,6 @@ namespace CMSData
             return DoctorID;
         }
 
-        // 3. تعديل بيانات طبيب (Update)
         public static bool UpdateDoctor(int DoctorID, int PersonID, int SpecialtyID, string LicenseNumber, DateTime HireDate, bool IsActive)
         {
             int rowsAffected = 0;
@@ -116,7 +113,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 4. حذف طبيب بواسطة المعرف (Delete)
         public static bool DeleteDoctor(int DoctorID)
         {
             int rowsAffected = 0;
@@ -145,7 +141,6 @@ namespace CMSData
             return (rowsAffected > 0);
         }
 
-        // 5. جلب جدول جميع الأطباء (والذي يقرأ داخلياً من الـ View الشاملة)
         public static DataTable GetAllDoctors()
         {
             DataTable dt = new DataTable();

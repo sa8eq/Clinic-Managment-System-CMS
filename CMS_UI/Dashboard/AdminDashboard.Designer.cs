@@ -30,6 +30,7 @@
         {
             this.lblCMS = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDepartments = new System.Windows.Forms.Button();
             this.btnInsuranceCompanies = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
@@ -61,7 +62,7 @@
             this.lblCMS.BackColor = System.Drawing.Color.MidnightBlue;
             this.lblCMS.Font = new System.Drawing.Font("Tahoma", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCMS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCMS.Location = new System.Drawing.Point(4, 60);
+            this.lblCMS.Location = new System.Drawing.Point(4, 54);
             this.lblCMS.Name = "lblCMS";
             this.lblCMS.Size = new System.Drawing.Size(199, 18);
             this.lblCMS.TabIndex = 1;
@@ -70,6 +71,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.btnDepartments);
             this.panel1.Controls.Add(this.btnInsuranceCompanies);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnSettings);
@@ -85,10 +87,21 @@
             this.panel1.Size = new System.Drawing.Size(217, 581);
             this.panel1.TabIndex = 2;
             // 
+            // btnDepartments
+            // 
+            this.btnDepartments.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDepartments.Location = new System.Drawing.Point(13, 247);
+            this.btnDepartments.Name = "btnDepartments";
+            this.btnDepartments.Size = new System.Drawing.Size(196, 36);
+            this.btnDepartments.TabIndex = 6;
+            this.btnDepartments.Text = "Departments";
+            this.btnDepartments.UseVisualStyleBackColor = true;
+            this.btnDepartments.Click += new System.EventHandler(this.btnDepartments_Click);
+            // 
             // btnInsuranceCompanies
             // 
             this.btnInsuranceCompanies.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsuranceCompanies.Location = new System.Drawing.Point(13, 309);
+            this.btnInsuranceCompanies.Location = new System.Drawing.Point(13, 288);
             this.btnInsuranceCompanies.Name = "btnInsuranceCompanies";
             this.btnInsuranceCompanies.Size = new System.Drawing.Size(196, 36);
             this.btnInsuranceCompanies.TabIndex = 12;
@@ -99,7 +112,7 @@
             // btnLogOut
             // 
             this.btnLogOut.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogOut.Location = new System.Drawing.Point(13, 485);
+            this.btnLogOut.Location = new System.Drawing.Point(13, 493);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(196, 36);
             this.btnLogOut.TabIndex = 11;
@@ -110,7 +123,7 @@
             // btnSettings
             // 
             this.btnSettings.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(13, 441);
+            this.btnSettings.Location = new System.Drawing.Point(13, 452);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(196, 36);
             this.btnSettings.TabIndex = 10;
@@ -120,7 +133,7 @@
             // btnReports
             // 
             this.btnReports.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.Location = new System.Drawing.Point(13, 397);
+            this.btnReports.Location = new System.Drawing.Point(13, 411);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(196, 36);
             this.btnReports.TabIndex = 9;
@@ -130,7 +143,7 @@
             // btnDoctors
             // 
             this.btnDoctors.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoctors.Location = new System.Drawing.Point(13, 221);
+            this.btnDoctors.Location = new System.Drawing.Point(13, 206);
             this.btnDoctors.Name = "btnDoctors";
             this.btnDoctors.Size = new System.Drawing.Size(196, 36);
             this.btnDoctors.TabIndex = 5;
@@ -140,7 +153,7 @@
             // btnUsers
             // 
             this.btnUsers.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsers.Location = new System.Drawing.Point(13, 353);
+            this.btnUsers.Location = new System.Drawing.Point(13, 370);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(196, 36);
             this.btnUsers.TabIndex = 4;
@@ -151,7 +164,7 @@
             // btnInvoices
             // 
             this.btnInvoices.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvoices.Location = new System.Drawing.Point(13, 265);
+            this.btnInvoices.Location = new System.Drawing.Point(13, 329);
             this.btnInvoices.Name = "btnInvoices";
             this.btnInvoices.Size = new System.Drawing.Size(196, 36);
             this.btnInvoices.TabIndex = 8;
@@ -161,7 +174,7 @@
             // btnVisits
             // 
             this.btnVisits.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVisits.Location = new System.Drawing.Point(13, 133);
+            this.btnVisits.Location = new System.Drawing.Point(13, 124);
             this.btnVisits.Name = "btnVisits";
             this.btnVisits.Size = new System.Drawing.Size(196, 36);
             this.btnVisits.TabIndex = 7;
@@ -171,7 +184,7 @@
             // btnAppointments
             // 
             this.btnAppointments.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppointments.Location = new System.Drawing.Point(13, 177);
+            this.btnAppointments.Location = new System.Drawing.Point(13, 165);
             this.btnAppointments.Name = "btnAppointments";
             this.btnAppointments.Size = new System.Drawing.Size(196, 36);
             this.btnAppointments.TabIndex = 6;
@@ -181,7 +194,7 @@
             // btnPatients
             // 
             this.btnPatients.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPatients.Location = new System.Drawing.Point(13, 89);
+            this.btnPatients.Location = new System.Drawing.Point(13, 83);
             this.btnPatients.Name = "btnPatients";
             this.btnPatients.Size = new System.Drawing.Size(196, 36);
             this.btnPatients.TabIndex = 4;
@@ -331,5 +344,6 @@
         private System.Windows.Forms.Label lblRoleName;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Button btnInsuranceCompanies;
+        private System.Windows.Forms.Button btnDepartments;
     }
 }

@@ -115,6 +115,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specialties\AddEditSpecialty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specialties\AddEditSpecialty.Designer.cs">
+      <DependentUpon>AddEditSpecialty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specialties\ManageSpecialties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specialties\ManageSpecialties.Designer.cs">
+      <DependentUpon>ManageSpecialties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Specialties\SpecialtyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Specialties\SpecialtyInfo.Designer.cs">
+      <DependentUpon>SpecialtyInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\AddEditUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +191,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Specialties\AddEditSpecialty.resx">
+      <DependentUpon>AddEditSpecialty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specialties\ManageSpecialties.resx">
+      <DependentUpon>ManageSpecialties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Specialties\SpecialtyInfo.resx">
+      <DependentUpon>SpecialtyInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\AddEditUser.resx">
       <DependentUpon>AddEditUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\department.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,7 @@
 ﻿using CMS_UI.Global;
 using CMS_UI.InsuranceCompanies;
 using CMS_UI.Patients;
+using CMS_UI.Specialties;
 using CMS_UI.Users;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,9 @@ namespace CMS_UI
                 btnSettings.Enabled = false;
                 btnReports.Enabled = false;
                 btnVisits.Enabled = false;
+                btnDepartments.Enabled = false;
 
+                btnDepartments.Visible = false;
                 btnUsers.Visible = false;
                 btnDoctors.Visible = false;
                 btnSettings.Visible = false;
@@ -63,6 +66,9 @@ namespace CMS_UI
                 btnSettings.Enabled = false;
                 btnReports.Enabled = false;
                 btnInsuranceCompanies.Enabled = false;
+                btnDepartments.Enabled = false;
+
+                btnDepartments.Visible = false;
 
                 btnUsers.Visible = false;
                 btnDoctors.Visible = false;
@@ -105,6 +111,15 @@ namespace CMS_UI
         private void btnPatients_Click(object sender, EventArgs e)
         {
             ManagePatients frm = new ManagePatients();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            ReLoadForm();
+        }
+
+        private void btnDepartments_Click(object sender, EventArgs e)
+        {
+            ManageSpecialties frm = new ManageSpecialties();
             this.Hide();
             frm.ShowDialog();
             this.Show();

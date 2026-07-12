@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\specialties\\specialtyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:specialties\\specialtyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\specialties\\managespecialties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:specialties\\managespecialties.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\specialties\\addeditspecialty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:specialties\\addeditspecialty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +34,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ManagePatients.cs",
-              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs",
-              "RelativeDocumentMoniker": "Patients\\ManagePatients.cs",
-              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs",
-              "RelativeToolTip": "Patients\\ManagePatients.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAIwJMAAABWAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "AddEditSpecialty.cs",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Specialties\\AddEditSpecialty.cs",
+              "RelativeDocumentMoniker": "Specialties\\AddEditSpecialty.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Specialties\\AddEditSpecialty.cs",
+              "RelativeToolTip": "Specialties\\AddEditSpecialty.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwEUAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T16:11:18.909Z",
+              "WhenOpened": "2026-07-12T01:17:54.596Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ManagePatients.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs",
-              "RelativeDocumentMoniker": "Patients\\ManagePatients.cs",
-              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs [Design]",
-              "RelativeToolTip": "Patients\\ManagePatients.cs [Design]",
+              "Title": "ManageSpecialties.cs",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Specialties\\ManageSpecialties.cs",
+              "RelativeDocumentMoniker": "Specialties\\ManageSpecialties.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Specialties\\ManageSpecialties.cs",
+              "RelativeToolTip": "Specialties\\ManageSpecialties.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAUwHsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-09T15:48:58.92Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-07-12T01:17:48.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpecialtyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Specialties\\SpecialtyInfo.cs",
+              "RelativeDocumentMoniker": "Specialties\\SpecialtyInfo.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Specialties\\SpecialtyInfo.cs",
+              "RelativeToolTip": "Specialties\\SpecialtyInfo.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T01:17:43.236Z",
+              "EditorCaption": ""
             }
           ]
         }

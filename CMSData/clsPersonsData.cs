@@ -12,7 +12,6 @@ namespace CMSData
         {
             bool isFound = false;
 
-            // clsDataAccessSettings.ConnectionString تأكد من مطابقة اسم كلاس الاتصال المتواجد عندك
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand("SP_GetPersonByID", connection))
@@ -73,11 +72,9 @@ namespace CMSData
                     command.Parameters.AddWithValue("@Email", Email);
                     command.Parameters.AddWithValue("@Address", Address);
 
-                    // معالجة الحقول الاختيارية عند الإرسال لقاعدة البيانات
                     command.Parameters.AddWithValue("@SecondName", string.IsNullOrEmpty(SecondName) ? (object)DBNull.Value : SecondName);
                     command.Parameters.AddWithValue("@ThirdName", string.IsNullOrEmpty(ThirdName) ? (object)DBNull.Value : ThirdName);
 
-                    // افترضنا هنا أن الـ Stored Procedure يعيد المعرف الجديد عبر SCOPE_IDENTITY أو نفذت كود جلب القيمة
                     try
                     {
                         connection.Open();
