@@ -15,6 +15,7 @@ namespace CMSLogic
         public DateTime HireDate { get; set; }
         public bool IsActive { get; set; }
         public clsPerson PersonInfo { get; set; }
+        public clsSpecialty DoctorSpecialty { get; set; }
         public clsDoctor()
         {
             this.DoctorID = -1;
@@ -24,8 +25,8 @@ namespace CMSLogic
             this.HireDate = DateTime.Now;
             this.IsActive = true;
 
-            // تهيئة كائن الشخص ليكون جاهزاً لاستقبال البيانات الشخصية في الواجهة
             this.PersonInfo = new clsPerson();
+            this.DoctorSpecialty = new clsSpecialty();
 
             Mode = enMode.AddNew;
         }
@@ -38,8 +39,8 @@ namespace CMSLogic
             this.HireDate = HireDate;
             this.IsActive = IsActive;
 
-            // جلب بيانات الشخص التابع لهذا الطبيب بذكاء من كلاس البزنس الخاص بالأشخاص
             this.PersonInfo = clsPerson.Find(PersonID);
+            this.DoctorSpecialty = clsSpecialty.Find(SpecialtyID);
 
             Mode = enMode.Update;
         }

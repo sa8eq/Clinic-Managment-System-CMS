@@ -73,6 +73,18 @@
     <Compile Include="Dashboard\AdminDashboard.Designer.cs">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Doctors\DoctorInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\DoctorInfo.Designer.cs">
+      <DependentUpon>DoctorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctors\ManageDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctors\ManageDoctors.Designer.cs">
+      <DependentUpon>ManageDoctors.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global\clsCurrentUser.cs" />
     <Compile Include="Global\clsValidate.cs" />
     <Compile Include="Global\clsPasswordHasher.cs" />
@@ -163,6 +175,12 @@
     <EmbeddedResource Include="Dashboard\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\DoctorInfo.resx">
+      <DependentUpon>DoctorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctors\ManageDoctors.resx">
+      <DependentUpon>ManageDoctors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InsuranceCompanies\AddEditInsuranceCompany.resx">
       <DependentUpon>AddEditInsuranceCompany.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,6 +266,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctors.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

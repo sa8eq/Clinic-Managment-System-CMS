@@ -243,7 +243,7 @@
             this.cmbFilterBy.FormattingEnabled = true;
             this.cmbFilterBy.Items.AddRange(new object[] {
             "None",
-            "PatientID",
+            "Patient ID",
             "Name"});
             this.cmbFilterBy.Location = new System.Drawing.Point(96, 114);
             this.cmbFilterBy.Name = "cmbFilterBy";

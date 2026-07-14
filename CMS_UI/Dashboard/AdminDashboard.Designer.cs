@@ -149,6 +149,7 @@
             this.btnDoctors.TabIndex = 5;
             this.btnDoctors.Text = "Doctors";
             this.btnDoctors.UseVisualStyleBackColor = true;
+            this.btnDoctors.Click += new System.EventHandler(this.btnDoctors_Click);
             // 
             // btnUsers
             // 

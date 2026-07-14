@@ -127,35 +127,60 @@ namespace CMS_UI.Patients
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            if (dataGridView1.DataSource == null) return;
+            if (_dt == null || _dt.Rows.Count == 0)
+                return;
 
-            string columnName = cmbFilterBy.SelectedItem.ToString();
             string filterText = txtFilter.Text.Trim().Replace("'", "''");
-
-            if (columnName == "Name")
-            {
-                columnName = "FullName";
-            }
+            string selectedColumn = cmbFilterBy.SelectedItem.ToString();
 
             if (string.IsNullOrEmpty(filterText))
             {
-                ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = "";
+                _dt.DefaultView.RowFilter = "";
+                lblCount.Text = "#" + dataGridView1.RowCount.ToString();
+                return;
             }
-            else if (columnName == "PatientID")
+
+            string columnName = "";
+            switch (selectedColumn)
+            {
+                case "Patient ID":
+                    columnName = "PatientID";
+                    break;
+                case "Name":
+                    columnName = "FullName";
+                    break;
+                case "Blood Type":
+                    columnName = "BloodType";
+                    break;
+                case "Insurance Company Name":
+                    columnName = "InsuranceCompanyName";
+                    break;
+                default:
+                    columnName = "None";
+                    break;
+            }
+
+            if (columnName == "PatientID")
             {
                 if (int.TryParse(filterText, out int id))
                 {
-                    ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"PatientID = {id}";
+                    _dt.DefaultView.RowFilter = $"PatientID = {id}";
                 }
                 else
                 {
-                    ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = "PatientID = -1";
+                    _dt.DefaultView.RowFilter = "PatientID = -1";
                 }
+            }
+            else if (columnName != "None")
+            {
+                _dt.DefaultView.RowFilter = $"{columnName} LIKE '{filterText}%'";
             }
             else
             {
-                ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = $"{columnName} LIKE '%{filterText}%'";
+                _dt.DefaultView.RowFilter = "";
             }
+
+            lblCount.Text = "#" + dataGridView1.RowCount.ToString();
         }
     }
 }
