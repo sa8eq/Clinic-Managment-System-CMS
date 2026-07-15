@@ -116,7 +116,8 @@
             this.toolStripSeparator3,
             this.invoicesAndPaymentsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(224, 198);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(224, 220);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // showPatientInformationToolStripMenuItem
             // 

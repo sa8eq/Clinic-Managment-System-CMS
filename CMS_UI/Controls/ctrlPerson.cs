@@ -14,6 +14,12 @@ namespace CMS_UI.Controls
 {
     public partial class ctrlPerson : UserControl
     {
+        private enum enMode { AddNew, Edit }
+        private enMode _Mode = enMode.AddNew;
+
+        private string _OriginalEmail = "";
+        private string _OriginalPhone = "";
+
         public string FirstName
         {
             get => txtFirstName.Text;
@@ -88,9 +94,6 @@ namespace CMS_UI.Controls
             this.AutoValidate = AutoValidate.EnableAllowFocusChange;
             Reload();
         }
-
-   
-
         public void FillPerson(clsPerson person)
         {
             person.FirstName = FirstName;
@@ -103,7 +106,6 @@ namespace CMS_UI.Controls
             person.Email = Email;
             person.Address = Address;
         }
-
         public void LoadPerson(clsPerson person)
         {
             FirstName = person.FirstName;
@@ -115,8 +117,11 @@ namespace CMS_UI.Controls
             Phone = person.Phone;
             Email = person.Email;
             Address = person.Address;
-        }
+            _OriginalEmail = person.Email;
+            _OriginalPhone = person.Phone;
 
+            _Mode = enMode.Edit;
+        }
         private void txtFirstName_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtFirstName.Text))
@@ -129,7 +134,6 @@ namespace CMS_UI.Controls
                 error.SetError(txtFirstName, "");
             }
         }
-
         private void txtLastName_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtLastName.Text))
@@ -142,7 +146,6 @@ namespace CMS_UI.Controls
                 error.SetError(txtLastName, "");
             }
         }
-
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtEmail.Text))
@@ -150,17 +153,26 @@ namespace CMS_UI.Controls
                 e.Cancel = true;
                 error.SetError(txtEmail, "Email Is Mandatory");
             }
-            else if(!clsValidate.IsValidEmail(txtEmail.Text))
+            else if (!clsValidate.IsValidEmail(txtEmail.Text))
             {
                 e.Cancel = true;
                 error.SetError(txtEmail, "Email Is Not Valid");
+            }
+            else if (_Mode == enMode.AddNew && clsPerson.ExistsByEmail(txtEmail.Text))
+            {
+                e.Cancel = true;
+                error.SetError(txtEmail, "Email Is Already Used");
+            }
+            else if (_Mode == enMode.Edit && txtEmail.Text != _OriginalEmail && clsPerson.ExistsByEmail(txtEmail.Text))
+            {
+                e.Cancel = true;
+                error.SetError(txtEmail, "Email Is Already Used");
             }
             else
             {
                 error.SetError(txtEmail, "");
             }
         }
-
         private void txtAddress_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtAddress.Text))
@@ -173,13 +185,22 @@ namespace CMS_UI.Controls
                 error.SetError(txtAddress, "");
             }
         }
-
         private void txtPhone_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                 e.Cancel = true;
                 error.SetError(txtPhone, "Phone Number Is Mandatory");
+            }
+            else if (_Mode == enMode.AddNew && clsPerson.ExistsByPhone(txtPhone.Text))
+            {
+                e.Cancel = true;
+                error.SetError(txtPhone, "Phone Is Already Used");
+            }
+            else if (_Mode == enMode.Edit && txtPhone.Text != _OriginalPhone && clsPerson.ExistsByPhone(txtPhone.Text))
+            {
+                e.Cancel = true;
+                error.SetError(txtPhone, "Phone Is Already Used");
             }
             else
             {

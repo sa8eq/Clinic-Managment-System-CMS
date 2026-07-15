@@ -197,6 +197,12 @@ namespace CMS_UI.Doctors
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
+            if(dataGridView1.Rows.Count==0 || dataGridView1.CurrentRow == null)
+            {
+                contextMenuStrip1.Enabled = false;
+                return;
+            }
+            contextMenuStrip1.Enabled = true;
             bool IsActive = Convert.ToBoolean(dataGridView1.CurrentRow.Cells["IsActive"].Value);
 
             if (!IsActive)
@@ -221,6 +227,7 @@ namespace CMS_UI.Doctors
             int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
 
             clsDoctor doctor = clsDoctor.Find(selectedid);
+            doctor.PersonInfo = clsPerson.Find(doctor.PersonID);
             doctor.IsActive = false;
 
             if (MessageBox.Show("Are You Sure You Want To DeActivate This Doctor?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -261,6 +268,39 @@ namespace CMS_UI.Doctors
                     MessageBox.Show("Failed ReActivating Doctor");
                 }
             }
+        }
+
+        private void addNewDoctorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEditDoctor frm = new AddEditDoctor();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void btnAddDoctor_Click(object sender, EventArgs e)
+        {
+            AddEditDoctor frm = new AddEditDoctor();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void editDoctorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Doctor To Edit");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
+            AddEditDoctor frm = new AddEditDoctor(selectedid);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
         }
     }
 }

@@ -141,12 +141,14 @@
             this.addNewDoctorToolStripMenuItem.Name = "addNewDoctorToolStripMenuItem";
             this.addNewDoctorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.addNewDoctorToolStripMenuItem.Text = "Add New Doctor";
+            this.addNewDoctorToolStripMenuItem.Click += new System.EventHandler(this.addNewDoctorToolStripMenuItem_Click);
             // 
             // editDoctorToolStripMenuItem
             // 
             this.editDoctorToolStripMenuItem.Name = "editDoctorToolStripMenuItem";
             this.editDoctorToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.editDoctorToolStripMenuItem.Text = "Edit Doctor";
+            this.editDoctorToolStripMenuItem.Click += new System.EventHandler(this.editDoctorToolStripMenuItem_Click);
             // 
             // deleteDoctorToolStripMenuItem
             // 
@@ -233,6 +235,7 @@
             this.btnAddDoctor.TabIndex = 4;
             this.btnAddDoctor.Text = "Add New Doctor";
             this.btnAddDoctor.UseVisualStyleBackColor = false;
+            this.btnAddDoctor.Click += new System.EventHandler(this.btnAddDoctor_Click);
             // 
             // btnClose
             // 

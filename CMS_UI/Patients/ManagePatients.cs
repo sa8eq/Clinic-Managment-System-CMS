@@ -182,5 +182,15 @@ namespace CMS_UI.Patients
 
             lblCount.Text = "#" + dataGridView1.RowCount.ToString();
         }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0 || dataGridView1.CurrentRow == null)
+            {
+                contextMenuStrip1.Enabled = false;
+                return;
+            }
+            contextMenuStrip1.Enabled = true;
+        }
     }
 }

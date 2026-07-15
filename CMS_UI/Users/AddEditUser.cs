@@ -166,7 +166,6 @@ namespace CMS_UI.Users
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
-            // في حالة الإضافة كلمة المرور إجبارية
             if (_Mode == enMode.AddNew)
             {
                 if (string.IsNullOrWhiteSpace(txtPassword.Text))
@@ -187,7 +186,6 @@ namespace CMS_UI.Users
                 return;
             }
 
-            // في حالة التعديل كلمة المرور اختيارية
             if (!string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 if (txtPassword.Text.Length < 8)
@@ -202,7 +200,6 @@ namespace CMS_UI.Users
             }
             else
             {
-                // تركها فارغة يعني لا تغيير لكلمة المرور
                 error.SetError(txtPassword, "");
             }
         }

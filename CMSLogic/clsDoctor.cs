@@ -16,6 +16,7 @@ namespace CMSLogic
         public bool IsActive { get; set; }
         public clsPerson PersonInfo { get; set; }
         public clsSpecialty DoctorSpecialty { get; set; }
+        public clsUser UserInfo { get; set; }
         public clsDoctor()
         {
             this.DoctorID = -1;
@@ -27,6 +28,7 @@ namespace CMSLogic
 
             this.PersonInfo = new clsPerson();
             this.DoctorSpecialty = new clsSpecialty();
+            this.UserInfo = new clsUser();
 
             Mode = enMode.AddNew;
         }
@@ -39,8 +41,16 @@ namespace CMSLogic
             this.HireDate = HireDate;
             this.IsActive = IsActive;
 
-            this.PersonInfo = clsPerson.Find(PersonID);
-            this.DoctorSpecialty = clsSpecialty.Find(SpecialtyID);
+            this.PersonInfo = clsPerson.Find(PersonID) ?? new clsPerson();
+
+            this.DoctorSpecialty = clsSpecialty.Find(SpecialtyID) ?? new clsSpecialty();
+
+            this.UserInfo = clsUser.FindByPersonID(PersonID);
+
+            if (this.UserInfo == null)
+            {
+                this.UserInfo = new clsUser();
+            }
 
             Mode = enMode.Update;
         }
@@ -69,11 +79,17 @@ namespace CMSLogic
         }
         public bool Save()
         {
+            this.UserInfo.PersonInfo = this.PersonInfo;
             if (!this.PersonInfo.Save())
             {
-                return false; 
+                return false;
             }
             this.PersonID = this.PersonInfo.PersonID;
+            this.UserInfo.PersonID = this.PersonInfo.PersonID;
+            if (!this.UserInfo.Save())
+            {
+                return false;
+            }
             switch (Mode)
             {
                 case enMode.AddNew:
