@@ -1,4 +1,5 @@
-﻿using CMS_UI.Doctors;
+﻿using CMS_UI.Appointments;
+using CMS_UI.Doctors;
 using CMS_UI.Global;
 using CMS_UI.InsuranceCompanies;
 using CMS_UI.Patients;
@@ -130,6 +131,15 @@ namespace CMS_UI
         private void btnDoctors_Click(object sender, EventArgs e)
         {
             ManageDoctors frm = new ManageDoctors();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            ReLoadForm();
+        }
+
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            ManageAppointments frm = new ManageAppointments();
             this.Hide();
             frm.ShowDialog();
             this.Show();

@@ -103,6 +103,16 @@ namespace CMS_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap medical_appointment {
+            get {
+                object obj = ResourceManager.GetObject("medical-appointment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap medical_logo {
             get {
                 object obj = ResourceManager.GetObject("medical_logo", resourceCulture);
@@ -116,6 +126,16 @@ namespace CMS_UI.Properties {
         internal static System.Drawing.Bitmap patient {
             get {
                 object obj = ResourceManager.GetObject("patient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap schadule {
+            get {
+                object obj = ResourceManager.GetObject("schadule", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

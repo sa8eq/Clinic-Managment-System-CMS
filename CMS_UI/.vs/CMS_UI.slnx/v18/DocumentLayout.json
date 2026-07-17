@@ -3,16 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\controls\\ctrlperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:controls\\ctrlperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\appointments\\manageappointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:appointments\\manageappointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\controls\\ctrlperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:controls\\ctrlperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\appointments\\manageappointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:appointments\\manageappointments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\doctors\\addeditdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:doctors\\addeditdoctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{646B9317-5C3B-4E04-A4B2-017355FA4F4D}|..\\CMSLogic\\CMSLogic.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cmslogic\\clsappointment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,38 +34,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ctrlPerson.cs",
-              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Controls\\ctrlPerson.cs",
-              "RelativeDocumentMoniker": "Controls\\ctrlPerson.cs",
-              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Controls\\ctrlPerson.cs",
-              "RelativeToolTip": "Controls\\ctrlPerson.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "ManageAppointments.cs",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Appointments\\ManageAppointments.cs",
+              "RelativeDocumentMoniker": "Appointments\\ManageAppointments.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Appointments\\ManageAppointments.cs",
+              "RelativeToolTip": "Appointments\\ManageAppointments.cs",
+              "ViewState": "AgIAAMkAAAAAAAAAAAApwOQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T03:38:03.765Z",
+              "WhenOpened": "2026-07-17T00:35:43.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsAppointment.cs",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMSLogic\\clsAppointment.cs",
+              "RelativeDocumentMoniker": "..\\CMSLogic\\clsAppointment.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMSLogic\\clsAppointment.cs",
+              "RelativeToolTip": "..\\CMSLogic\\clsAppointment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-17T00:19:51.515Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ctrlPerson.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Controls\\ctrlPerson.cs",
-              "RelativeDocumentMoniker": "Controls\\ctrlPerson.cs",
-              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Controls\\ctrlPerson.cs [Design]",
-              "RelativeToolTip": "Controls\\ctrlPerson.cs [Design]",
+              "Title": "ManageAppointments.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Appointments\\ManageAppointments.cs",
+              "RelativeDocumentMoniker": "Appointments\\ManageAppointments.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Appointments\\ManageAppointments.cs [Design]",
+              "RelativeToolTip": "Appointments\\ManageAppointments.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T03:38:02.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddEditDoctor.cs",
-              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Doctors\\AddEditDoctor.cs",
-              "RelativeDocumentMoniker": "Doctors\\AddEditDoctor.cs",
-              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Doctors\\AddEditDoctor.cs",
-              "RelativeToolTip": "Doctors\\AddEditDoctor.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAIwDYAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T02:51:36.673Z"
+              "WhenOpened": "2026-07-17T00:09:26.525Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

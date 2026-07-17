@@ -1,4 +1,5 @@
-﻿using CMSLogic;
+﻿using CMS_UI.DoctorSchadule;
+using CMSLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -297,6 +298,21 @@ namespace CMS_UI.Doctors
             }
             int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
             AddEditDoctor frm = new AddEditDoctor(selectedid);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void showDoctorScheduleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Doctor To Edit Hes/Her Schedule");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
+            ManageDoctorSchedule frm = new ManageDoctorSchedule(selectedid);
             this.Hide();
             frm.ShowDialog();
             this.Show();
