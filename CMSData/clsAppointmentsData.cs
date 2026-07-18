@@ -190,5 +190,45 @@ namespace CMSData
 
             return isConflict;
         }
+
+        public static List<string> GetBookedSlotsForDoctor(int doctorID, DateTime appointmentDate)
+        {
+            List<string> bookedSlots = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT FORMAT(AppointmentDate, 'HH:mm') FROM Appointments 
+                         WHERE DoctorID = @DoctorID 
+                         AND CAST(AppointmentDate AS DATE) = @AppointmentDate
+                         AND Status <> 'Cancelled'"; 
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@DoctorID", doctorID);
+                    command.Parameters.AddWithValue("@AppointmentDate", appointmentDate.Date);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                if (reader[0] != DBNull.Value)
+                                {
+                                    bookedSlots.Add(reader[0].ToString());
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
+            }
+
+            return bookedSlots;
+        }
     }
 }

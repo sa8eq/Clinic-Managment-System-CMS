@@ -17,6 +17,7 @@ namespace CMSLogic
             Cancelled = 2,
             NoShow = 3
         }
+
         public enum Mode { AddNew = 0, Update = 1 }
         private Mode _mode = Mode.AddNew;
 
@@ -28,8 +29,21 @@ namespace CMSLogic
         public enStatus Status { get; set; }
         public string Notes { get; set; }
 
+        public int SelectedServiceID { get; set; } = -1;
+
         public clsPatient PatientInfo { get; private set; }
         public clsDoctor DoctorInfo { get; private set; }
+
+        public clsMedicalService SelectedServiceInfo
+        {
+            get
+            {
+                if (SelectedServiceID == -1) return null;
+                return clsMedicalService.Find(SelectedServiceID);
+            }
+        }
+
+        public clsInvoice InvoiceInfo { get; set; }
 
         public clsAppointment()
         {
@@ -41,11 +55,14 @@ namespace CMSLogic
             this.Status = enStatus.Pending;
             this.Notes = "";
 
+            this.SelectedServiceID = -1;
             this.PatientInfo = null;
             this.DoctorInfo = null;
+            this.InvoiceInfo = null;
 
             _mode = Mode.AddNew;
         }
+
         private clsAppointment(int appointmentID, int patientID, int doctorID, int userID, DateTime appointmentDate, enStatus status, string notes)
         {
             this.AppointmentID = appointmentID;
@@ -58,9 +75,16 @@ namespace CMSLogic
 
             this.PatientInfo = clsPatient.Find(patientID);
             this.DoctorInfo = clsDoctor.Find(doctorID);
+            this.InvoiceInfo = clsInvoice.FindInvoiceByAppointmentID(appointmentID);
+
+            if (this.InvoiceInfo != null && this.InvoiceInfo.InvoiceDetailsList != null && this.InvoiceInfo.InvoiceDetailsList.Rows.Count > 0)
+            {
+                this.SelectedServiceID = Convert.ToInt32(this.InvoiceInfo.InvoiceDetailsList.Rows[0]["ServiceID"]);
+            }
 
             _mode = Mode.Update;
         }
+
         public static clsAppointment Find(int appointmentID)
         {
             int patientID = -1;
@@ -76,14 +100,11 @@ namespace CMSLogic
             if (isFound)
             {
                 enStatus status = (enStatus)Enum.Parse(typeof(enStatus), statusText);
-
                 return new clsAppointment(appointmentID, patientID, doctorID, userID, appointmentDate, status, notes);
             }
-            else
-            {
-                return null;
-            }
+            return null;
         }
+
         private bool _AddNew()
         {
             this.AppointmentID = clsAppointmentsData.AddNewAppointment(
@@ -91,11 +112,13 @@ namespace CMSLogic
 
             return (this.AppointmentID != -1);
         }
+
         private bool _Update()
         {
             return clsAppointmentsData.UpdateAppointment(
                 this.AppointmentID, this.PatientID, this.DoctorID, this.UserID, this.AppointmentDate, this.Status.ToString(), this.Notes);
         }
+
         public bool Save()
         {
             switch (_mode)
@@ -120,16 +143,22 @@ namespace CMSLogic
                     }
                     return false;
             }
-
             return false;
         }
+
         public static DataTable GetAllAppointments()
         {
             return clsAppointmentsData.GetAllAppointments();
         }
+
         public static bool CheckAppointmentConflict(int doctorID, DateTime appointmentDate, int excludeAppointmentID = -1)
         {
             return clsAppointmentsData.CheckAppointmentConflict(doctorID, appointmentDate, excludeAppointmentID);
+        }
+
+        public static List<string> GetBookedSlotsForDoctor(int doctorID, DateTime appointmentDate)
+        {
+            return clsAppointmentsData.GetBookedSlotsForDoctor(doctorID, appointmentDate);
         }
     }
 }

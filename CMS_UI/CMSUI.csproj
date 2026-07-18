@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointments\AddEditAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointments\AddEditAppointment.Designer.cs">
+      <DependentUpon>AddEditAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointments\ManageAppointments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="InsuranceCompanies\ManageInsuraanceCompanies.Designer.cs">
       <DependentUpon>ManageInsuraanceCompanies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices\Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,9 @@
     <Compile Include="Users\UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Appointments\AddEditAppointment.resx">
+      <DependentUpon>AddEditAppointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointments\ManageAppointments.resx">
       <DependentUpon>ManageAppointments.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InsuranceCompanies\ManageInsuraanceCompanies.resx">
       <DependentUpon>ManageInsuraanceCompanies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -302,6 +320,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\medical-appointment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\invoice.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

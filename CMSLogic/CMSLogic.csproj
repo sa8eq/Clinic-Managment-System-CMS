@@ -45,6 +45,9 @@
     <Compile Include="clsDoctorSchedule.cs" />
     <Compile Include="clsInsuranceCompany.cs" />
     <Compile Include="clsDoctor.cs" />
+    <Compile Include="clsInvoice.cs" />
+    <Compile Include="clsInvoiceDetails.cs" />
+    <Compile Include="clsMedicalService.cs" />
     <Compile Include="clsPatient.cs" />
     <Compile Include="clsPerson.cs" />
     <Compile Include="clsRole.cs" />

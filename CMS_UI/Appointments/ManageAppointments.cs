@@ -226,7 +226,11 @@ namespace CMS_UI.Appointments
 
         private void btnAddNewAppointment_Click(object sender, EventArgs e)
         {
-
+            AddEditAppointment frm = new AddEditAppointment();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
         }
     }
 }
