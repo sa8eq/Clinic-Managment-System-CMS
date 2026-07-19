@@ -36,7 +36,6 @@ namespace CMSLogic
             Mode = enMode.AddNew;
         }
 
-        // مشيد التحديث والـ Find
         private clsInvoiceDetails(int invoiceDetailID, int invoiceID, int serviceID, int quantity, decimal price)
         {
             this.InvoiceDetailID = invoiceDetailID;
@@ -93,14 +92,35 @@ namespace CMSLogic
             return false;
         }
 
-        public static DataTable GetInvoiceDetailsByInvoiceID(int invoiceID)
+        public static List<clsInvoiceDetails> GetInvoiceDetailsByInvoiceID(int invoiceID)
         {
-            return clsInvoiceDetailsData.GetInvoiceDetailsByInvoiceID(invoiceID);
+
+            List<clsInvoiceDetails> detailsList = new List<clsInvoiceDetails>();
+
+            DataTable dt = clsInvoiceDetailsData.GetInvoiceDetailsByInvoiceID(invoiceID);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                detailsList.Add(new clsInvoiceDetails(
+                    (int)row["InvoiceDetailID"],
+                    (int)row["InvoiceID"],
+                    (int)row["ServiceID"],
+                    (int)row["Quantity"],
+                    (decimal)row["Price"]
+                ));
+            }
+
+            return detailsList;
         }
 
         public static bool DeleteInvoiceDetail(int invoiceDetailID)
         {
             return clsInvoiceDetailsData.DeleteInvoiceDetail(invoiceDetailID);
+        }
+
+        public static bool DeleteInvoiceDetailsByInvoiceID(int invoiceID)
+        {
+            return clsInvoiceDetailsData.DeleteInvoiceDetailsByInvoiceID(invoiceID);
         }
     }
 }

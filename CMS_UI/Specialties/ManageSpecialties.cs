@@ -1,4 +1,5 @@
-﻿using CMSLogic;
+﻿using CMS_UI.Doctors;
+using CMSLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,6 +115,21 @@ namespace CMS_UI.Specialties
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             AddEditSpecialty frm = new AddEditSpecialty();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void showDoctorsInDepartmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Make Sure You Choose A Specialty To Show The Doctors");
+                return;
+            }
+            int selectedID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["SpecialtyID"].Value);
+            ManageDoctors frm = new ManageDoctors(selectedID);
             this.Hide();
             frm.ShowDialog();
             this.Show();

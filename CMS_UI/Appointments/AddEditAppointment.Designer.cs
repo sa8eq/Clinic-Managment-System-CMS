@@ -155,12 +155,12 @@
             this.cmDoctors.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectThisDoctorToolStripMenuItem});
             this.cmDoctors.Name = "cmDoctors";
-            this.cmDoctors.Size = new System.Drawing.Size(106, 26);
+            this.cmDoctors.Size = new System.Drawing.Size(181, 48);
             // 
             // selectThisDoctorToolStripMenuItem
             // 
             this.selectThisDoctorToolStripMenuItem.Name = "selectThisDoctorToolStripMenuItem";
-            this.selectThisDoctorToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.selectThisDoctorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.selectThisDoctorToolStripMenuItem.Text = "Select";
             this.selectThisDoctorToolStripMenuItem.Click += new System.EventHandler(this.selectThisDoctorToolStripMenuItem_Click);
             // 

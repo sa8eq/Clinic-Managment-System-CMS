@@ -28,6 +28,20 @@ namespace CMS_UI.Appointments
             _AppointmentID = Appointmentid;
             _Mode = enMode.Edit;
         }
+        public AddEditAppointment(clsDoctor doc)
+        {
+            InitializeComponent();
+            _Doctor = doc;
+            _Mode = enMode.AddNew;
+        }
+        public AddEditAppointment(clsPatient pat)
+        {
+            InitializeComponent();
+            _Patient = pat;
+            _Mode = enMode.AddNew;
+        }
+        private clsPatient _Patient;
+        private clsDoctor _Doctor;
         private string _SelectedTime = "";
         private DataTable dtPatients;
         private DataTable dtDoctors;
@@ -99,18 +113,48 @@ namespace CMS_UI.Appointments
             DataView dvDoctors = dtAllDoctors.DefaultView;
             dvDoctors.RowFilter = "IsActive = true";
             dtDoctors = dvDoctors.ToTable();
-           
+            
+            if (_Doctor != null)
+            {
+                lblDoctorID.Text = _Doctor.DoctorID.ToString();
+                lblDoctorName.Text = _Doctor.PersonInfo.FullName;
+                lblSpecialtyName.Text = _Doctor.DoctorSpecialty.SpecialtyName;
+
+                selectThisDoctorToolStripMenuItem.Enabled = false;
+
+                dgvDoctors.Enabled = false;
+                dgvDoctors.Visible = false;
+                cmbDoctorFilterBy.Enabled = false;
+                _LoadMedicalServices(_Doctor.SpecialtyID);
+            }
+
+            if(_Patient != null)
+            {
+                lblPatientID.Text = _Patient.PatientID.ToString();
+                lblPatientName.Text = _Patient.FullName;
+
+                selectThisPatientToolStripMenuItem.Enabled = false;
+
+                dgvPatients.Enabled = false;
+                dgvPatients.Visible = false;
+
+                cmbPatientFilterBy.Enabled = false;
+            }
+
             DGVSetup();
             
         }
         private void AddEditAppointment_Load(object sender, EventArgs e)
         {
+            dtpAppointmentDate.ValueChanged -= dtpAppointmentDate_ValueChanged;
+
             dtpAppointmentDate.MinDate = DateTime.Now.AddDays(1);
 
             Reload();
 
             if (_Mode == enMode.Edit)
             {
+                label1.Text = "Edit Appointment";
                 _Appointment = clsAppointment.Find(_AppointmentID);
 
                 if (_Appointment == null)
@@ -132,7 +176,6 @@ namespace CMS_UI.Appointments
 
                 lblPatientID.Text = _Appointment.PatientID.ToString();
                 lblPatientName.Text = _Appointment.PatientInfo.PersonInfo.FullName;
-
                 lblDoctorID.Text = _Appointment.DoctorID.ToString();
                 lblDoctorName.Text = _Appointment.DoctorInfo.PersonInfo.FullName;
                 lblSpecialtyName.Text = _Appointment.DoctorInfo.DoctorSpecialty.SpecialtyName;
@@ -144,25 +187,15 @@ namespace CMS_UI.Appointments
                     cmbMedicalService.SelectedValue = _Appointment.SelectedServiceID;
                 }
 
-                if (_Appointment.AppointmentDate < dtpAppointmentDate.MinDate)
-                {
-                    dtpAppointmentDate.MinDate = _Appointment.AppointmentDate.Date;
-                }
+                dtpAppointmentDate.MinDate = new DateTime(2000, 1, 1);
+                dtpAppointmentDate.MaxDate = new DateTime(2050, 12, 31);
+
                 dtpAppointmentDate.Value = _Appointment.AppointmentDate.Date;
 
                 UpdateAvailableSlots();
-
-                string oldTime = _Appointment.AppointmentDate.ToString(@"hh\:mm");
-
-                foreach (Control control in flpSlots.Controls)
-                {
-                    if (control is Button btn && btn.Text == oldTime)
-                    {
-                        btn.PerformClick();
-                        break;
-                    }
-                }
             }
+
+            dtpAppointmentDate.ValueChanged += dtpAppointmentDate_ValueChanged;
         }
         private void cmbPatientFilterBy_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -219,22 +252,6 @@ namespace CMS_UI.Appointments
         {
             this.Close();
         }
-
-        private void _Lock()
-        {
-            flpSlots.Enabled = false;
-            cmbMedicalService.Enabled = false;
-            dtpAppointmentDate.Enabled = false;
-            btnSave.Enabled = false;
-      
-            pictureBox2.Enabled = false;
-            cmbDoctorFilterBy.Enabled = false;
-            cmbPatientFilterBy.Enabled = false;
-            cmbDepartment.Enabled = false;
-
-            txtDoctorFilter.Enabled = false;
-            txtPatientFilter.Enabled = false;
-        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (cmbMedicalService.SelectedIndex == -1 || cmbMedicalService.SelectedValue == null)
@@ -242,13 +259,13 @@ namespace CMS_UI.Appointments
                 MessageBox.Show("Please select a medical service.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (lblPatientID.Text == "???" || string.IsNullOrEmpty(lblPatientID.Text))
+            if (lblPatientID.Text == "###" || string.IsNullOrEmpty(lblPatientID.Text))
             {
                 MessageBox.Show("Please select a patient first.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (lblDoctorID.Text == "???" || string.IsNullOrEmpty(lblDoctorID.Text))
+            if (lblDoctorID.Text == "###" || string.IsNullOrEmpty(lblDoctorID.Text))
             {
                 MessageBox.Show("Please select a doctor first.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -284,7 +301,6 @@ namespace CMS_UI.Appointments
                 {
                     Invoice frm = new Invoice(_Appointment);
                     frm.ShowDialog();
-                    MessageBox.Show("Appointment Saved. Opening payment invoice...", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -293,7 +309,6 @@ namespace CMS_UI.Appointments
 
                 _Mode = enMode.Edit;
                 _AppointmentID = _Appointment.AppointmentID;
-                _Lock();
                 this.Close(); 
             }
             else
@@ -418,10 +433,7 @@ namespace CMS_UI.Appointments
             flpSlots.Controls.Clear();
             _SelectedTime = "";
 
-            if (!int.TryParse(lblDoctorID.Text, out int doctorID))
-            {
-                return;
-            }
+            if (!int.TryParse(lblDoctorID.Text, out int doctorID)) return;
 
             DateTime selectedDate = dtpAppointmentDate.Value.Date;
 
@@ -436,15 +448,40 @@ namespace CMS_UI.Appointments
                 startTime = startTime.Add(interval);
             }
 
+            if (_Mode == enMode.Edit && _Appointment != null)
+            {
+                string savedTime = _Appointment.AppointmentDate.ToString(@"hh\:mm");
+                if (!allSlots.Contains(savedTime))
+                {
+                    int insertIndex = 0;
+                    TimeSpan savedTimeSpan = _Appointment.AppointmentDate.TimeOfDay;
+
+                    while (insertIndex < allSlots.Count)
+                    {
+                        TimeSpan slotTimeSpan = TimeSpan.Parse(allSlots[insertIndex]);
+                        if (savedTimeSpan < slotTimeSpan)
+                        {
+                            break;
+                        }
+                        insertIndex++;
+                    }
+
+                    allSlots.Insert(insertIndex, savedTime);  
+                }
+            }
+
             List<string> bookedSlots = clsAppointment.GetBookedSlotsForDoctor(doctorID, selectedDate);
 
             if (_Mode == enMode.Edit && _Appointment != null && _Appointment.AppointmentDate.Date == selectedDate)
             {
                 string currentAppointmentTime = _Appointment.AppointmentDate.ToString(@"hh\:mm");
-                bookedSlots.Remove(currentAppointmentTime);
+                bookedSlots.RemoveAll(t => t.Trim() == currentAppointmentTime);
             }
 
             List<string> availableSlots = allSlots.Except(bookedSlots).ToList();
+
+            string timeToHighlight = (_Mode == enMode.Edit && _Appointment != null && _Appointment.AppointmentDate.Date == selectedDate)
+                                     ? _Appointment.AppointmentDate.ToString(@"hh\:mm") : null;
 
             foreach (string slot in availableSlots)
             {
@@ -454,35 +491,43 @@ namespace CMS_UI.Appointments
                 btnSlot.Cursor = Cursors.Hand;
                 btnSlot.FlatStyle = FlatStyle.Flat;
                 btnSlot.FlatAppearance.BorderSize = 1;
-                btnSlot.FlatAppearance.BorderColor = Color.LightGray;
                 btnSlot.BackColor = Color.White;
                 btnSlot.ForeColor = Color.Black;
 
-                btnSlot.Click += (s, ev) => {
-                    foreach (Button btn in flpSlots.Controls)
-                    {
-                        btn.BackColor = Color.White;
-                        btn.ForeColor = Color.Black;
-                        btn.FlatAppearance.BorderColor = Color.LightGray;
-                    }
-
+                if (timeToHighlight != null && slot == timeToHighlight)
+                {
                     btnSlot.BackColor = Color.DodgerBlue;
                     btnSlot.ForeColor = Color.White;
                     btnSlot.FlatAppearance.BorderColor = Color.DodgerBlue;
+                    _SelectedTime = slot;
+                }
 
-                    _SelectedTime = btnSlot.Text;
+                btnSlot.Click += (s, ev) =>
+                {
+                    Button clickedButton = (Button)s;
+
+                    foreach (Control ctrl in flpSlots.Controls)
+                    {
+                        if (ctrl is Button btn)
+                        {
+                            btn.BackColor = Color.White;
+                            btn.ForeColor = Color.Black;
+                            btn.FlatAppearance.BorderColor = Color.LightGray;
+                        }
+                    }
+
+                    clickedButton.BackColor = Color.DodgerBlue;
+                    clickedButton.ForeColor = Color.White;
+                    clickedButton.FlatAppearance.BorderColor = Color.DodgerBlue;
+                    _SelectedTime = clickedButton.Text;
                 };
 
                 flpSlots.Controls.Add(btnSlot);
             }
 
-            if (availableSlots.Count == 0)
+            if (timeToHighlight != null && !availableSlots.Contains(timeToHighlight))
             {
-                Label lblMessage = new Label();
-                lblMessage.Text = "No Available Appointments For This Day";
-                lblMessage.AutoSize = true;
-                lblMessage.ForeColor = Color.Red;
-                flpSlots.Controls.Add(lblMessage);
+                _SelectedTime = "";
             }
         }
         private void dtpAppointmentDate_ValueChanged(object sender, EventArgs e)

@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnAddNew = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblCount = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showDepartmentInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showDoctorsInDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +40,14 @@
             this.addNewDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddNew = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -59,6 +59,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(965, 110);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CMS_UI.Properties.Resources.department;
+            this.pictureBox1.Location = new System.Drawing.Point(460, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -82,6 +92,58 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(933, 287);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDepartmentInfoToolStripMenuItem,
+            this.showDoctorsInDepartmentToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.addNewDepartmentToolStripMenuItem,
+            this.editDepartmentToolStripMenuItem,
+            this.deleteDepartmentToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(227, 142);
+            // 
+            // showDepartmentInfoToolStripMenuItem
+            // 
+            this.showDepartmentInfoToolStripMenuItem.Name = "showDepartmentInfoToolStripMenuItem";
+            this.showDepartmentInfoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.showDepartmentInfoToolStripMenuItem.Text = "Show Department Info";
+            this.showDepartmentInfoToolStripMenuItem.Click += new System.EventHandler(this.showDepartmentInfoToolStripMenuItem_Click);
+            // 
+            // showDoctorsInDepartmentToolStripMenuItem
+            // 
+            this.showDoctorsInDepartmentToolStripMenuItem.Name = "showDoctorsInDepartmentToolStripMenuItem";
+            this.showDoctorsInDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.showDoctorsInDepartmentToolStripMenuItem.Text = "Show Doctors In Department";
+            this.showDoctorsInDepartmentToolStripMenuItem.Click += new System.EventHandler(this.showDoctorsInDepartmentToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
+            // 
+            // addNewDepartmentToolStripMenuItem
+            // 
+            this.addNewDepartmentToolStripMenuItem.Name = "addNewDepartmentToolStripMenuItem";
+            this.addNewDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.addNewDepartmentToolStripMenuItem.Text = "Add New Department";
+            this.addNewDepartmentToolStripMenuItem.Click += new System.EventHandler(this.addNewDepartmentToolStripMenuItem_Click);
+            // 
+            // editDepartmentToolStripMenuItem
+            // 
+            this.editDepartmentToolStripMenuItem.Name = "editDepartmentToolStripMenuItem";
+            this.editDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.editDepartmentToolStripMenuItem.Text = "Edit Department";
+            this.editDepartmentToolStripMenuItem.Click += new System.EventHandler(this.editDepartmentToolStripMenuItem_Click);
+            // 
+            // deleteDepartmentToolStripMenuItem
+            // 
+            this.deleteDepartmentToolStripMenuItem.Name = "deleteDepartmentToolStripMenuItem";
+            this.deleteDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.deleteDepartmentToolStripMenuItem.Text = "Delete Department";
+            this.deleteDepartmentToolStripMenuItem.Click += new System.EventHandler(this.deleteDepartmentToolStripMenuItem_Click);
             // 
             // btnAddNew
             // 
@@ -129,67 +191,6 @@
             this.lblCount.TabIndex = 5;
             this.lblCount.Text = "#0";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showDepartmentInfoToolStripMenuItem,
-            this.showDoctorsInDepartmentToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.addNewDepartmentToolStripMenuItem,
-            this.editDepartmentToolStripMenuItem,
-            this.deleteDepartmentToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(227, 120);
-            // 
-            // showDepartmentInfoToolStripMenuItem
-            // 
-            this.showDepartmentInfoToolStripMenuItem.Name = "showDepartmentInfoToolStripMenuItem";
-            this.showDepartmentInfoToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.showDepartmentInfoToolStripMenuItem.Text = "Show Department Info";
-            this.showDepartmentInfoToolStripMenuItem.Click += new System.EventHandler(this.showDepartmentInfoToolStripMenuItem_Click);
-            // 
-            // showDoctorsInDepartmentToolStripMenuItem
-            // 
-            this.showDoctorsInDepartmentToolStripMenuItem.Name = "showDoctorsInDepartmentToolStripMenuItem";
-            this.showDoctorsInDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.showDoctorsInDepartmentToolStripMenuItem.Text = "Show Doctors In Department";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(223, 6);
-            // 
-            // addNewDepartmentToolStripMenuItem
-            // 
-            this.addNewDepartmentToolStripMenuItem.Name = "addNewDepartmentToolStripMenuItem";
-            this.addNewDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.addNewDepartmentToolStripMenuItem.Text = "Add New Department";
-            this.addNewDepartmentToolStripMenuItem.Click += new System.EventHandler(this.addNewDepartmentToolStripMenuItem_Click);
-            // 
-            // editDepartmentToolStripMenuItem
-            // 
-            this.editDepartmentToolStripMenuItem.Name = "editDepartmentToolStripMenuItem";
-            this.editDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.editDepartmentToolStripMenuItem.Text = "Edit Department";
-            this.editDepartmentToolStripMenuItem.Click += new System.EventHandler(this.editDepartmentToolStripMenuItem_Click);
-            // 
-            // deleteDepartmentToolStripMenuItem
-            // 
-            this.deleteDepartmentToolStripMenuItem.Name = "deleteDepartmentToolStripMenuItem";
-            this.deleteDepartmentToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.deleteDepartmentToolStripMenuItem.Text = "Delete Department";
-            this.deleteDepartmentToolStripMenuItem.Click += new System.EventHandler(this.deleteDepartmentToolStripMenuItem_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CMS_UI.Properties.Resources.department;
-            this.pictureBox1.Location = new System.Drawing.Point(460, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 68);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // ManageSpecialties
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,9 +209,9 @@
             this.Load += new System.EventHandler(this.ManageSpecialties_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

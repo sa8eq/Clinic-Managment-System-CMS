@@ -133,5 +133,26 @@ namespace CMSData
 
             return (rowsAffected > 0);
         }
+
+        public static bool DeleteInvoiceDetailsByInvoiceID(int invoiceID)
+        {
+            int rowsAffected = 0;
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_DeleteInvoiceDetailsByInvoiceID", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add("@InvoiceID", SqlDbType.Int).Value = invoiceID;
+
+                    try
+                    {
+                        connection.Open();
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex) { throw new Exception("Error: " + ex.Message); }
+                }
+            }
+            return (rowsAffected > 0);
+        }
     }
 }

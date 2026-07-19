@@ -150,12 +150,14 @@
             this.bookNewAppointmentToolStripMenuItem.Name = "bookNewAppointmentToolStripMenuItem";
             this.bookNewAppointmentToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.bookNewAppointmentToolStripMenuItem.Text = "Book New Appointment";
+            this.bookNewAppointmentToolStripMenuItem.Click += new System.EventHandler(this.bookNewAppointmentToolStripMenuItem_Click);
             // 
             // showAppointmentsHistoryToolStripMenuItem
             // 
             this.showAppointmentsHistoryToolStripMenuItem.Name = "showAppointmentsHistoryToolStripMenuItem";
             this.showAppointmentsHistoryToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.showAppointmentsHistoryToolStripMenuItem.Text = "Show Appointments History";
+            this.showAppointmentsHistoryToolStripMenuItem.Click += new System.EventHandler(this.showAppointmentsHistoryToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 

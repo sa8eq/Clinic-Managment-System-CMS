@@ -1,4 +1,5 @@
-﻿using CMS_UI.DoctorSchadule;
+﻿using CMS_UI.Appointments;
+using CMS_UI.DoctorSchadule;
 using CMSLogic;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,13 @@ namespace CMS_UI.Doctors
         {
             InitializeComponent();
         }
+        public ManageDoctors(int depID)
+        {
+            InitializeComponent();
+            _SpecialtyID = depID;
+        }
 
+        private int _SpecialtyID = -1;
         private DataTable _dt;
 
         private void Reload()
@@ -57,6 +64,18 @@ namespace CMS_UI.Doctors
         private void ManageDoctors_Load(object sender, EventArgs e)
         {
             Reload();
+
+            if(_SpecialtyID != -1)
+            {
+                clsSpecialty spec = clsSpecialty.Find(_SpecialtyID);
+                cmbFilter.SelectedItem = "Specialty";
+                cmbFilter.Enabled = false;
+
+                cmbSpecialty.Text = spec.SpecialtyName;
+                cmbSpecialty.Enabled = false;
+
+                btnAddDoctor.Enabled = false;
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -313,6 +332,38 @@ namespace CMS_UI.Doctors
             }
             int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
             ManageDoctorSchedule frm = new ManageDoctorSchedule(selectedid);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void bookAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Doctor To Book Appointment With");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
+            clsDoctor doc = clsDoctor.Find(selectedid);
+            AddEditAppointment frm = new AddEditAppointment(doc);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void showDoctorAppointmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Doctor To Show Appointment History");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
+            clsDoctor doc = clsDoctor.Find(selectedid);
+            ManageAppointments frm = new ManageAppointments(doc);
             this.Hide();
             frm.ShowDialog();
             this.Show();

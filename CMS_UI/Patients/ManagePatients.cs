@@ -1,4 +1,5 @@
-﻿using CMSLogic;
+﻿using CMS_UI.Appointments;
+using CMSLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -191,6 +192,38 @@ namespace CMS_UI.Patients
                 return;
             }
             contextMenuStrip1.Enabled = true;
+        }
+
+        private void bookNewAppointmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Patient To Book Appointment For");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["PatientID"].Value);
+            clsPatient pat = clsPatient.Find(selectedid);
+            AddEditAppointment frm = new AddEditAppointment(pat);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void showAppointmentsHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Patient To Show Appointment History");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["PatientID"].Value);
+            clsPatient pat = clsPatient.Find(selectedid);
+            ManageAppointments frm = new ManageAppointments(pat);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
         }
     }
 }

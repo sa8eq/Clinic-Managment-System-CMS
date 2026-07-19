@@ -31,6 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPaymentStatus = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.lblDiscount = new System.Windows.Forms.Label();
             this.lblServicePrice = new System.Windows.Forms.Label();
@@ -53,12 +55,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rdbPayLater = new System.Windows.Forms.RadioButton();
+            this.rdbPayNow = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNotes = new System.Windows.Forms.TextBox();
-            this.rdbPayNow = new System.Windows.Forms.RadioButton();
-            this.rdbPayLater = new System.Windows.Forms.RadioButton();
-            this.lblPaymentStatus = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,6 +103,25 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Financial Summery";
+            // 
+            // lblPaymentStatus
+            // 
+            this.lblPaymentStatus.AutoSize = true;
+            this.lblPaymentStatus.Location = new System.Drawing.Point(8, 178);
+            this.lblPaymentStatus.Name = "lblPaymentStatus";
+            this.lblPaymentStatus.Size = new System.Drawing.Size(31, 13);
+            this.lblPaymentStatus.TabIndex = 20;
+            this.lblPaymentStatus.Text = "###";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(8, 160);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(110, 14);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Payment Status:";
             // 
             // lblTotalAmount
             // 
@@ -293,7 +312,7 @@
             this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
             this.btnSave.Location = new System.Drawing.Point(243, 428);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(132, 36);
+            this.btnSave.Size = new System.Drawing.Size(230, 36);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -304,12 +323,13 @@
             this.btnClose.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnClose.Location = new System.Drawing.Point(105, 428);
+            this.btnClose.Location = new System.Drawing.Point(12, 428);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(132, 36);
+            this.btnClose.Size = new System.Drawing.Size(225, 36);
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // groupBox2
             // 
@@ -321,6 +341,28 @@
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Payment Status";
+            // 
+            // rdbPayLater
+            // 
+            this.rdbPayLater.AutoSize = true;
+            this.rdbPayLater.Location = new System.Drawing.Point(137, 29);
+            this.rdbPayLater.Name = "rdbPayLater";
+            this.rdbPayLater.Size = new System.Drawing.Size(71, 17);
+            this.rdbPayLater.TabIndex = 1;
+            this.rdbPayLater.TabStop = true;
+            this.rdbPayLater.Text = "Pay Later";
+            this.rdbPayLater.UseVisualStyleBackColor = true;
+            // 
+            // rdbPayNow
+            // 
+            this.rdbPayNow.AutoSize = true;
+            this.rdbPayNow.Location = new System.Drawing.Point(17, 29);
+            this.rdbPayNow.Name = "rdbPayNow";
+            this.rdbPayNow.Size = new System.Drawing.Size(67, 17);
+            this.rdbPayNow.TabIndex = 0;
+            this.rdbPayNow.TabStop = true;
+            this.rdbPayNow.Text = "Pay Now";
+            this.rdbPayNow.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -339,47 +381,6 @@
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(230, 118);
             this.txtNotes.TabIndex = 16;
-            // 
-            // rdbPayNow
-            // 
-            this.rdbPayNow.AutoSize = true;
-            this.rdbPayNow.Location = new System.Drawing.Point(17, 29);
-            this.rdbPayNow.Name = "rdbPayNow";
-            this.rdbPayNow.Size = new System.Drawing.Size(67, 17);
-            this.rdbPayNow.TabIndex = 0;
-            this.rdbPayNow.TabStop = true;
-            this.rdbPayNow.Text = "Pay Now";
-            this.rdbPayNow.UseVisualStyleBackColor = true;
-            // 
-            // rdbPayLater
-            // 
-            this.rdbPayLater.AutoSize = true;
-            this.rdbPayLater.Location = new System.Drawing.Point(137, 29);
-            this.rdbPayLater.Name = "rdbPayLater";
-            this.rdbPayLater.Size = new System.Drawing.Size(71, 17);
-            this.rdbPayLater.TabIndex = 1;
-            this.rdbPayLater.TabStop = true;
-            this.rdbPayLater.Text = "Pay Later";
-            this.rdbPayLater.UseVisualStyleBackColor = true;
-            // 
-            // lblPaymentStatus
-            // 
-            this.lblPaymentStatus.AutoSize = true;
-            this.lblPaymentStatus.Location = new System.Drawing.Point(8, 178);
-            this.lblPaymentStatus.Name = "lblPaymentStatus";
-            this.lblPaymentStatus.Size = new System.Drawing.Size(31, 13);
-            this.lblPaymentStatus.TabIndex = 20;
-            this.lblPaymentStatus.Text = "###";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(8, 160);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(110, 14);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Payment Status:";
             // 
             // Invoice
             // 

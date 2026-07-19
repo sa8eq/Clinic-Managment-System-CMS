@@ -22,7 +22,7 @@ namespace CMSLogic
         public decimal PatientShareAmount { get; set; }
         public string PaymentStatus { get; set; }
 
-        public DataTable InvoiceDetailsList { get; set; }
+        public List<clsInvoiceDetails> InvoiceDetailsList { get; set; }
 
         public clsInvoice()
         {
@@ -34,12 +34,33 @@ namespace CMSLogic
             this.InsuranceCoverAmount = 0;
             this.PatientShareAmount = 0;
             this.PaymentStatus = "";
+            this.InvoiceDetailsList = new List<clsInvoiceDetails>(); 
+            Mode = enMode.AddNew;
+        }
+        public clsInvoice(clsAppointment app)
+        {
+            this.InvoiceID = -1;
+            this.VisitID = null;
+            this.AppointmentID = app.AppointmentID;
+            this.InvoiceDate = DateTime.Now;
+            this.TotalAmount = app.SelectedServiceInfo.Price;
 
-            this.InvoiceDetailsList = new DataTable();
+            decimal percentage = app.PatientInfo.InsuranceCompanyInfo?.CoveragePercentage ?? 0;
+            this.InsuranceCoverAmount = (TotalAmount * percentage) / 100;
+            this.PatientShareAmount = TotalAmount - InsuranceCoverAmount;
+            this.PaymentStatus = "Unpaid"; 
+
+            this.InvoiceDetailsList = new List<clsInvoiceDetails>();
+
+            clsInvoiceDetails initialDetail = new clsInvoiceDetails();
+            initialDetail.ServiceID = app.SelectedServiceID;
+            initialDetail.Price = app.SelectedServiceInfo.Price;
+            initialDetail.Quantity = 1;
+
+            this.InvoiceDetailsList.Add(initialDetail);
 
             Mode = enMode.AddNew;
         }
-
         private clsInvoice(int invoiceID, int? visitID, int? appointmentID, DateTime invoiceDate,
             decimal totalAmount, decimal insuranceCoverAmount, decimal patientShareAmount, string paymentStatus)
         {
@@ -59,31 +80,46 @@ namespace CMSLogic
 
         private bool _AddNew()
         {
-            this.InvoiceID = clsInvoicesData.AddNewInvoice(
-                this.VisitID,
-                this.AppointmentID,
-                this.InvoiceDate,
-                this.TotalAmount,
-                this.InsuranceCoverAmount,
-                this.PatientShareAmount,
-                this.PaymentStatus
-            );
+            this.InvoiceID = clsInvoicesData.AddNewInvoice
+                (this.VisitID, this.AppointmentID, 
+                this.InvoiceDate, this.TotalAmount, 
+                this.InsuranceCoverAmount, this.PatientShareAmount, 
+                this.PaymentStatus);
 
-            return (this.InvoiceID != -1);
+            if (this.InvoiceID != -1)
+            {
+                foreach (clsInvoiceDetails detail in this.InvoiceDetailsList)
+                {
+                    detail.InvoiceID = this.InvoiceID;
+                    detail.Save(); 
+                }
+                return true;
+            }
+            return false;
         }
 
         private bool _Update()
         {
-            return clsInvoicesData.UpdateInvoice(
-                this.InvoiceID,
-                this.VisitID,
-                this.AppointmentID,
-                this.InvoiceDate,
-                this.TotalAmount,
-                this.InsuranceCoverAmount,
-                this.PatientShareAmount,
-                this.PaymentStatus
-            );
+            bool isInvoiceUpdated = clsInvoicesData.UpdateInvoice(
+                this.InvoiceID, this.VisitID, this.AppointmentID, this.InvoiceDate,
+                this.TotalAmount, this.InsuranceCoverAmount, this.PatientShareAmount, this.PaymentStatus);
+
+            if (isInvoiceUpdated)
+            {
+                clsInvoiceDetails.DeleteInvoiceDetailsByInvoiceID(this.InvoiceID);
+
+                foreach (clsInvoiceDetails detail in this.InvoiceDetailsList)
+                {
+                    detail.InvoiceID = this.InvoiceID;
+                    if (!detail.Save())
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            return false;
         }
 
         public static clsInvoice Find(int invoiceID)
@@ -127,15 +163,10 @@ namespace CMSLogic
                         Mode = enMode.Update;
                         return true;
                     }
-                    else
-                    {
-                        return false;
-                    }
-
+                    return false;
                 case enMode.Update:
                     return _Update();
             }
-
             return false;
         }
 

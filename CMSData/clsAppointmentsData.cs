@@ -10,7 +10,7 @@ namespace CMSData
 {
     public class clsAppointmentsData
     {
-        public static int AddNewAppointment(int patientID, int doctorID, int userID, DateTime appointmentDate, string status, string notes)
+        public static int AddNewAppointment(int patientID, int doctorID, int userID, DateTime appointmentDate, string status, string notes, int serviceID) // إضافة serviceID
         {
             int appointmentID = -1;
 
@@ -25,6 +25,7 @@ namespace CMSData
                     command.Parameters.Add("@UserID", SqlDbType.Int).Value = userID;
                     command.Parameters.Add("@AppointmentDate", SqlDbType.DateTime).Value = appointmentDate;
                     command.Parameters.Add("@Status", SqlDbType.NVarChar, 20).Value = status;
+                    command.Parameters.Add("@ServiceID", SqlDbType.Int).Value = serviceID; // إضافة المعامل
 
                     if (string.IsNullOrEmpty(notes))
                         command.Parameters.Add("@Notes", SqlDbType.NVarChar, 500).Value = DBNull.Value;
@@ -35,38 +36,29 @@ namespace CMSData
                     {
                         connection.Open();
                         object result = command.ExecuteScalar();
-
                         if (result != null && int.TryParse(result.ToString(), out int insertedID))
-                        {
                             appointmentID = insertedID;
-                        }
                     }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error in AddNewAppointment: " + ex.Message);
-                    }
+                    catch (Exception ex) { throw new Exception("Error in AddNewAppointment: " + ex.Message); }
                 }
             }
-
             return appointmentID;
         }
-
-        public static bool UpdateAppointment(int appointmentID, int patientID, int doctorID, int userID, DateTime appointmentDate, string status, string notes)
+        public static bool UpdateAppointment(int appointmentID, int patientID, int doctorID, int userID, DateTime appointmentDate, string status, string notes, int serviceID) // إضافة serviceID
         {
             int rowsAffected = 0;
-
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand("SP_UpdateAppointment", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-
                     command.Parameters.Add("@AppointmentID", SqlDbType.Int).Value = appointmentID;
                     command.Parameters.Add("@PatientID", SqlDbType.Int).Value = patientID;
                     command.Parameters.Add("@DoctorID", SqlDbType.Int).Value = doctorID;
                     command.Parameters.Add("@UserID", SqlDbType.Int).Value = userID;
                     command.Parameters.Add("@AppointmentDate", SqlDbType.DateTime).Value = appointmentDate;
                     command.Parameters.Add("@Status", SqlDbType.NVarChar, 20).Value = status;
+                    command.Parameters.Add("@ServiceID", SqlDbType.Int).Value = serviceID; // إضافة المعامل
 
                     if (string.IsNullOrEmpty(notes))
                         command.Parameters.Add("@Notes", SqlDbType.NVarChar, 500).Value = DBNull.Value;
@@ -78,20 +70,14 @@ namespace CMSData
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
                     }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error in UpdateAppointment: " + ex.Message);
-                    }
+                    catch (Exception ex) { throw new Exception("Error in UpdateAppointment: " + ex.Message); }
                 }
             }
-
             return (rowsAffected > 0);
         }
-
-        public static bool GetAppointmentByID(int appointmentID, ref int patientID, ref int doctorID, ref int userID, ref DateTime appointmentDate, ref string status, ref string notes)
+        public static bool GetAppointmentByID(int appointmentID, ref int patientID, ref int doctorID, ref int userID, ref DateTime appointmentDate, ref string status, ref string notes, ref int serviceID)
         {
             bool isFound = false;
-
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand("SP_GetAppointmentByID", connection))
@@ -113,19 +99,15 @@ namespace CMSData
                                 appointmentDate = (DateTime)reader["AppointmentDate"];
                                 status = reader["Status"].ToString();
                                 notes = reader["Notes"] == DBNull.Value ? "" : reader["Notes"].ToString();
+                                serviceID = (int)reader["ServiceID"]; // قراءة القيمة من الداتابيز
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        throw new Exception("Error in GetAppointmentByID: " + ex.Message);
-                    }
+                    catch (Exception ex) { throw new Exception("Error in GetAppointmentByID: " + ex.Message); }
                 }
             }
-
             return isFound;
         }
-
         public static DataTable GetAllAppointments()
         {
             DataTable dt = new DataTable();

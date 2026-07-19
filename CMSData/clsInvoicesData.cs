@@ -203,7 +203,7 @@ namespace CMSData
                                 visitID = reader["VisitID"] != DBNull.Value ? (int?)reader["VisitID"] : null;
                                 invoiceDate = (DateTime)reader["InvoiceDate"];
                                 totalAmount = (decimal)reader["TotalAmount"];
-                                insuranceCoverAmount = (decimal)reader["InsuranceCoverAmount"];
+                                insuranceCoverAmount = (decimal)reader["InsuranceCoveredAmount"];
                                 patientShareAmount = (decimal)reader["PatientShareAmount"];
                                 paymentStatus = reader["PaymentStatus"].ToString();
                             }

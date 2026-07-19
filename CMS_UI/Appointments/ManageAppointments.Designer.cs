@@ -28,10 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeStautsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.completedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cancelledToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noShowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.startVisitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.btnAddNewAppointment = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,9 +53,11 @@
             this.cmbStatusFilter = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.cmbDepartment = new System.Windows.Forms.ComboBox();
+            this.pendingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,6 +70,16 @@
             this.panel1.Size = new System.Drawing.Size(969, 108);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CMS_UI.Properties.Resources.medical_appointment;
+            this.pictureBox1.Location = new System.Drawing.Point(462, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -67,26 +91,101 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Manage Appointments";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CMS_UI.Properties.Resources.medical_appointment;
-            this.pictureBox1.Location = new System.Drawing.Point(462, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(86, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 155);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(933, 320);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDetailsToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.editAppointmentToolStripMenuItem,
+            this.changeStautsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.startVisitToolStripMenuItem,
+            this.toolStripSeparator2});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(198, 148);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            // 
+            // showDetailsToolStripMenuItem
+            // 
+            this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.showDetailsToolStripMenuItem.Text = "Show Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(197, 22);
+            this.toolStripMenuItem1.Text = "Add New Appointment";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // editAppointmentToolStripMenuItem
+            // 
+            this.editAppointmentToolStripMenuItem.Name = "editAppointmentToolStripMenuItem";
+            this.editAppointmentToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.editAppointmentToolStripMenuItem.Text = "Edit Appointment";
+            this.editAppointmentToolStripMenuItem.Click += new System.EventHandler(this.editAppointmentToolStripMenuItem_Click);
+            // 
+            // changeStautsToolStripMenuItem
+            // 
+            this.changeStautsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.completedToolStripMenuItem,
+            this.cancelledToolStripMenuItem,
+            this.noShowToolStripMenuItem,
+            this.pendingToolStripMenuItem});
+            this.changeStautsToolStripMenuItem.Name = "changeStautsToolStripMenuItem";
+            this.changeStautsToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.changeStautsToolStripMenuItem.Text = "Change Stauts";
+            // 
+            // completedToolStripMenuItem
+            // 
+            this.completedToolStripMenuItem.Name = "completedToolStripMenuItem";
+            this.completedToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.completedToolStripMenuItem.Text = "Completed";
+            this.completedToolStripMenuItem.Click += new System.EventHandler(this.completedToolStripMenuItem_Click);
+            // 
+            // cancelledToolStripMenuItem
+            // 
+            this.cancelledToolStripMenuItem.Name = "cancelledToolStripMenuItem";
+            this.cancelledToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.cancelledToolStripMenuItem.Text = "Cancelled";
+            this.cancelledToolStripMenuItem.Click += new System.EventHandler(this.cancelledToolStripMenuItem_Click);
+            // 
+            // noShowToolStripMenuItem
+            // 
+            this.noShowToolStripMenuItem.Name = "noShowToolStripMenuItem";
+            this.noShowToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.noShowToolStripMenuItem.Text = "No-Show";
+            this.noShowToolStripMenuItem.Click += new System.EventHandler(this.noShowToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(194, 6);
+            // 
+            // startVisitToolStripMenuItem
+            // 
+            this.startVisitToolStripMenuItem.Name = "startVisitToolStripMenuItem";
+            this.startVisitToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.startVisitToolStripMenuItem.Text = "Start Visit";
+            this.startVisitToolStripMenuItem.Click += new System.EventHandler(this.startVisitToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(194, 6);
             // 
             // btnAddNewAppointment
             // 
@@ -195,6 +294,13 @@
             this.cmbDepartment.TabIndex = 10;
             this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
+            // pendingToolStripMenuItem
+            // 
+            this.pendingToolStripMenuItem.Name = "pendingToolStripMenuItem";
+            this.pendingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pendingToolStripMenuItem.Text = "Pending";
+            this.pendingToolStripMenuItem.Click += new System.EventHandler(this.pendingToolStripMenuItem_Click);
+            // 
             // ManageAppointments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +326,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +347,17 @@
         private System.Windows.Forms.ComboBox cmbStatusFilter;
         private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.ComboBox cmbDepartment;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem showDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editAppointmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeStautsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem completedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cancelledToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem noShowToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem startVisitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pendingToolStripMenuItem;
     }
 }
