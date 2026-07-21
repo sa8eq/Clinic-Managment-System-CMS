@@ -131,11 +131,17 @@
     <Compile Include="InsuranceCompanies\ManageInsuraanceCompanies.Designer.cs">
       <DependentUpon>ManageInsuraanceCompanies.cs</DependentUpon>
     </Compile>
-    <Compile Include="Invoices\Invoice.cs">
+    <Compile Include="Invoices\AddEditInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Invoices\Invoice.Designer.cs">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <Compile Include="Invoices\AddEditInvoice.Designer.cs">
+      <DependentUpon>AddEditInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices\ManageInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoices\ManageInvoices.Designer.cs">
+      <DependentUpon>ManageInvoices.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -238,8 +244,11 @@
     <EmbeddedResource Include="InsuranceCompanies\ManageInsuraanceCompanies.resx">
       <DependentUpon>ManageInsuraanceCompanies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Invoices\Invoice.resx">
-      <DependentUpon>Invoice.cs</DependentUpon>
+    <EmbeddedResource Include="Invoices\AddEditInvoice.resx">
+      <DependentUpon>AddEditInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\ManageInvoices.resx">
+      <DependentUpon>ManageInvoices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

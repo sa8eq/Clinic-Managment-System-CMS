@@ -122,6 +122,11 @@ namespace CMSLogic
         {
             return clsInvoiceDetailsData.DeleteInvoiceDetailsByInvoiceID(invoiceID);
         }
+
+        public static DataTable GetAllInvoicesDetails()
+        {
+            return clsInvoiceDetailsData.GetAllInvoiceDetails();
+        }
     }
 }
 

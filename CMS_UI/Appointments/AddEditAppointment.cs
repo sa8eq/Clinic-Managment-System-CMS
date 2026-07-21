@@ -299,7 +299,7 @@ namespace CMS_UI.Appointments
             {
                 if (_Appointment.SelectedServiceInfo != null && _Appointment.SelectedServiceInfo.Price > 0)
                 {
-                    Invoice frm = new Invoice(_Appointment);
+                    AddEditInvoice frm = new AddEditInvoice(_Appointment);
                     frm.ShowDialog();
                 }
                 else

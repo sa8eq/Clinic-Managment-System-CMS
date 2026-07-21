@@ -387,7 +387,6 @@ namespace CMS_UI.Appointments
                 startVisitToolStripMenuItem.Enabled = false;
             } 
         }
-
         private void pendingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int appID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["AppointmentID"].Value);

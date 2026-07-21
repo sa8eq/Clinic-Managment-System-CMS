@@ -12,11 +12,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CMS_UI.Invoices
 {
-    public partial class Invoice : Form
+    public partial class AddEditInvoice : Form
     {
         private clsAppointment _Appointment;
         private clsInvoice _Invoice;
-        public Invoice(clsAppointment app)
+        public AddEditInvoice(clsAppointment app)
         {
             InitializeComponent();
             _Appointment = app;

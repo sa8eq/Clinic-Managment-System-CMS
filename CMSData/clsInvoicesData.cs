@@ -109,7 +109,7 @@ namespace CMSData
                                 appointmentID = reader["AppointmentID"] != DBNull.Value ? (int?)reader["AppointmentID"] : null;
                                 invoiceDate = (DateTime)reader["InvoiceDate"];
                                 totalAmount = (decimal)reader["TotalAmount"];
-                                insuranceCoverAmount = (decimal)reader["InsuranceCoverAmount"];
+                                insuranceCoverAmount = (decimal)reader["InsuranceCoveredAmount"];
                                 patientShareAmount = (decimal)reader["PatientShareAmount"];
                                 paymentStatus = reader["PaymentStatus"].ToString();
                             }
@@ -217,6 +217,33 @@ namespace CMSData
             }
             return isFound;
         }
+
+        public static bool UpdatePaymentStatus(int invoiceID, string paymentStatus)
+        {
+            bool isUpdated = false;
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = "UPDATE Invoices SET PaymentStatus = @PaymentStatus WHERE InvoiceID = @InvoiceID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PaymentStatus", paymentStatus);
+                    command.Parameters.AddWithValue("@InvoiceID", invoiceID);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        isUpdated = (rowsAffected > 0);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
+            }
+            return isUpdated;
+        }
+
     }
 }
 

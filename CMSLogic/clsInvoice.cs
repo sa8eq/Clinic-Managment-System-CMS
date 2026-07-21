@@ -12,7 +12,6 @@ namespace CMSLogic
     {
         public enum enMode { AddNew = 0, Update = 1 }
         public enMode Mode = enMode.AddNew;
-
         public int InvoiceID { get; set; }
         public int? VisitID { get; set; }
         public int? AppointmentID { get; set; }
@@ -21,9 +20,8 @@ namespace CMSLogic
         public decimal InsuranceCoverAmount { get; set; }
         public decimal PatientShareAmount { get; set; }
         public string PaymentStatus { get; set; }
-
+        public clsAppointment Appointment;
         public List<clsInvoiceDetails> InvoiceDetailsList { get; set; }
-
         public clsInvoice()
         {
             this.InvoiceID = -1;
@@ -34,7 +32,8 @@ namespace CMSLogic
             this.InsuranceCoverAmount = 0;
             this.PatientShareAmount = 0;
             this.PaymentStatus = "";
-            this.InvoiceDetailsList = new List<clsInvoiceDetails>(); 
+            this.Appointment = new clsAppointment();
+            this.InvoiceDetailsList = new List<clsInvoiceDetails>();
             Mode = enMode.AddNew;
         }
         public clsInvoice(clsAppointment app)
@@ -43,12 +42,8 @@ namespace CMSLogic
             this.VisitID = null;
             this.AppointmentID = app.AppointmentID;
             this.InvoiceDate = DateTime.Now;
-            this.TotalAmount = app.SelectedServiceInfo.Price;
 
-            decimal percentage = app.PatientInfo.InsuranceCompanyInfo?.CoveragePercentage ?? 0;
-            this.InsuranceCoverAmount = (TotalAmount * percentage) / 100;
-            this.PatientShareAmount = TotalAmount - InsuranceCoverAmount;
-            this.PaymentStatus = "Unpaid"; 
+            this.Appointment = app;
 
             this.InvoiceDetailsList = new List<clsInvoiceDetails>();
 
@@ -59,10 +54,14 @@ namespace CMSLogic
 
             this.InvoiceDetailsList.Add(initialDetail);
 
+            decimal insurancePercentage = app.PatientInfo?.InsuranceCompanyInfo?.CoveragePercentage ?? 0;
+
+            RecalculateTotal(insurancePercentage);
+
+            this.PaymentStatus = "Unpaid";
             Mode = enMode.AddNew;
         }
-        private clsInvoice(int invoiceID, int? visitID, int? appointmentID, DateTime invoiceDate,
-            decimal totalAmount, decimal insuranceCoverAmount, decimal patientShareAmount, string paymentStatus)
+        private clsInvoice(int invoiceID, int? visitID, int? appointmentID, DateTime invoiceDate, decimal totalAmount, decimal insuranceCoverAmount, decimal patientShareAmount, string paymentStatus)
         {
             this.InvoiceID = invoiceID;
             this.VisitID = visitID;
@@ -77,13 +76,26 @@ namespace CMSLogic
 
             Mode = enMode.Update;
         }
+        private void RecalculateTotal(decimal insuranceCoveragePercentage)
+        {
+            if (this.InvoiceDetailsList != null && this.InvoiceDetailsList.Count > 0)
+            {
+                this.TotalAmount = this.InvoiceDetailsList.Sum(d => d.LineTotal);
+            }
+            else
+            {
+                this.TotalAmount = 0;
+            }
 
+            this.InsuranceCoverAmount = (this.TotalAmount * insuranceCoveragePercentage) / 100;
+            this.PatientShareAmount = this.TotalAmount - this.InsuranceCoverAmount;
+        }
         private bool _AddNew()
         {
             this.InvoiceID = clsInvoicesData.AddNewInvoice
-                (this.VisitID, this.AppointmentID, 
-                this.InvoiceDate, this.TotalAmount, 
-                this.InsuranceCoverAmount, this.PatientShareAmount, 
+                (this.VisitID, this.AppointmentID,
+                this.InvoiceDate, this.TotalAmount,
+                this.InsuranceCoverAmount, this.PatientShareAmount,
                 this.PaymentStatus);
 
             if (this.InvoiceID != -1)
@@ -91,29 +103,32 @@ namespace CMSLogic
                 foreach (clsInvoiceDetails detail in this.InvoiceDetailsList)
                 {
                     detail.InvoiceID = this.InvoiceID;
-                    detail.Save(); 
+                    detail.Save();
                 }
                 return true;
             }
             return false;
         }
-
         private bool _Update()
         {
             bool isInvoiceUpdated = clsInvoicesData.UpdateInvoice(
-                this.InvoiceID, this.VisitID, this.AppointmentID, this.InvoiceDate,
-                this.TotalAmount, this.InsuranceCoverAmount, this.PatientShareAmount, this.PaymentStatus);
+        this.InvoiceID, this.VisitID, this.AppointmentID, this.InvoiceDate,
+        this.TotalAmount, this.InsuranceCoverAmount, this.PatientShareAmount, this.PaymentStatus);
 
             if (isInvoiceUpdated)
             {
-                clsInvoiceDetails.DeleteInvoiceDetailsByInvoiceID(this.InvoiceID);
 
-                foreach (clsInvoiceDetails detail in this.InvoiceDetailsList)
+                if (this.InvoiceDetailsList != null && this.InvoiceDetailsList.Count > 0)
                 {
-                    detail.InvoiceID = this.InvoiceID;
-                    if (!detail.Save())
+                    clsInvoiceDetails.DeleteInvoiceDetailsByInvoiceID(this.InvoiceID);
+
+                    foreach (clsInvoiceDetails detail in this.InvoiceDetailsList)
                     {
-                        return false;
+                        detail.InvoiceID = this.InvoiceID;
+                        if (!detail.Save())
+                        {
+                            return false;
+                        }
                     }
                 }
 
@@ -121,7 +136,6 @@ namespace CMSLogic
             }
             return false;
         }
-
         public static clsInvoice Find(int invoiceID)
         {
             int? visitID = null;
@@ -152,7 +166,6 @@ namespace CMSLogic
                 return null;
             }
         }
-
         public bool Save()
         {
             switch (Mode)
@@ -169,17 +182,14 @@ namespace CMSLogic
             }
             return false;
         }
-
         public static DataTable GetAllInvoices()
         {
             return clsInvoicesData.GetAllInvoices();
         }
-
         public static bool DeleteInvoice(int invoiceID)
         {
             return clsInvoicesData.DeleteInvoice(invoiceID);
         }
-
         public static clsInvoice FindInvoiceByAppointmentID(int appointmentID)
         {
             int invoiceID = -1;
@@ -198,6 +208,11 @@ namespace CMSLogic
                 return new clsInvoice(invoiceID, visitID, appointmentID, invoiceDate, totalAmount, insuranceCoverAmount, patientShareAmount, paymentStatus);
             }
             return null;
+        }
+        public bool UpdatePaymentStatus(string newStatus)
+        {
+            this.PaymentStatus = newStatus;
+            return clsInvoicesData.UpdatePaymentStatus(this.InvoiceID, newStatus);
         }
     }
 }

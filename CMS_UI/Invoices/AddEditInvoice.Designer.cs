@@ -1,6 +1,6 @@
 ﻿namespace CMS_UI.Invoices
 {
-    partial class Invoice
+    partial class AddEditInvoice
     {
         /// <summary>
         /// Required designer variable.

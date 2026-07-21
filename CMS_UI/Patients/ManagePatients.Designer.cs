@@ -186,6 +186,7 @@
             this.invoicesAndPaymentsToolStripMenuItem.Name = "invoicesAndPaymentsToolStripMenuItem";
             this.invoicesAndPaymentsToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.invoicesAndPaymentsToolStripMenuItem.Text = "Invoices And Payments";
+            this.invoicesAndPaymentsToolStripMenuItem.Click += new System.EventHandler(this.invoicesAndPaymentsToolStripMenuItem_Click);
             // 
             // btnAddNewPatient
             // 

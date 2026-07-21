@@ -100,7 +100,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // Handle exception
+                        throw new Exception(ex.Message);
                     }
                 }
             }
@@ -153,6 +153,36 @@ namespace CMSData
                 }
             }
             return (rowsAffected > 0);
+        }
+
+        public static DataTable GetAllInvoiceDetails()
+        {
+            DataTable dt = new DataTable();
+
+            using(SqlConnection conn = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using(SqlCommand comm = new SqlCommand("SP_GetAllInvoiceDetails", conn))
+                {
+                    comm.CommandType = CommandType.StoredProcedure;
+                    try
+                    {
+                        conn.Open();
+                        using (SqlDataReader reader = comm.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                dt.Load(reader);
+                            }
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                }
+            }
+
+            return dt;
         }
     }
 }
