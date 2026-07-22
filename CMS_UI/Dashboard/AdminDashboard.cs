@@ -6,6 +6,7 @@ using CMS_UI.Invoices;
 using CMS_UI.Patients;
 using CMS_UI.Specialties;
 using CMS_UI.Users;
+using CMS_UI.Visits;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -150,6 +151,15 @@ namespace CMS_UI
         private void btnInvoices_Click(object sender, EventArgs e)
         {
             ManageInvoices frm = new ManageInvoices();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            ReLoadForm();
+        }
+
+        private void btnVisits_Click(object sender, EventArgs e)
+        {
+            ManageVisits frm = new ManageVisits();
             this.Hide();
             frm.ShowDialog();
             this.Show();

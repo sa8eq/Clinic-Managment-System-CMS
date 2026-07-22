@@ -182,6 +182,7 @@
             this.btnVisits.TabIndex = 7;
             this.btnVisits.Text = "Visits";
             this.btnVisits.UseVisualStyleBackColor = true;
+            this.btnVisits.Click += new System.EventHandler(this.btnVisits_Click);
             // 
             // btnAppointments
             // 

@@ -169,6 +169,7 @@
             this.showVisitsHistoryToolStripMenuItem.Name = "showVisitsHistoryToolStripMenuItem";
             this.showVisitsHistoryToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.showVisitsHistoryToolStripMenuItem.Text = "Show Visits History";
+            this.showVisitsHistoryToolStripMenuItem.Click += new System.EventHandler(this.showVisitsHistoryToolStripMenuItem_Click);
             // 
             // showPriscribtionHistoryToolStripMenuItem
             // 

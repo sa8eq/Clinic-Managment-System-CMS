@@ -205,6 +205,18 @@
     <Compile Include="Users\UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visits\ManageVisits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visits\ManageVisits.Designer.cs">
+      <DependentUpon>ManageVisits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visits\VisitInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visits\VisitInfo.Designer.cs">
+      <DependentUpon>VisitInfo.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Appointments\AddEditAppointment.resx">
       <DependentUpon>AddEditAppointment.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +302,12 @@
     <EmbeddedResource Include="Users\UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Visits\ManageVisits.resx">
+      <DependentUpon>ManageVisits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visits\VisitInfo.resx">
+      <DependentUpon>VisitInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -344,6 +362,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\doctor-visit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

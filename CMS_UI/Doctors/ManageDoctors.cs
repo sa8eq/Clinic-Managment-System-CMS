@@ -1,5 +1,6 @@
 ﻿using CMS_UI.Appointments;
 using CMS_UI.DoctorSchadule;
+using CMS_UI.Visits;
 using CMSLogic;
 using System;
 using System.Collections.Generic;
@@ -364,6 +365,23 @@ namespace CMS_UI.Doctors
             int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
             clsDoctor doc = clsDoctor.Find(selectedid);
             ManageAppointments frm = new ManageAppointments(doc);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Doctor To Show Visits History");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["DoctorID"].Value);
+            clsDoctor doc = clsDoctor.Find(selectedid);
+
+            ManageVisits frm = new ManageVisits(doc);
             this.Hide();
             frm.ShowDialog();
             this.Show();

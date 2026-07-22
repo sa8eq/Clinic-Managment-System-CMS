@@ -1,5 +1,6 @@
 ﻿using CMS_UI.Appointments;
 using CMS_UI.Invoices;
+using CMS_UI.Visits;
 using CMSLogic;
 using System;
 using System.Collections.Generic;
@@ -237,6 +238,24 @@ namespace CMS_UI.Patients
             int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["PatientID"].Value);
 
             ManageInvoices frm = new ManageInvoices(selectedid);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
+        }
+
+        private void showVisitsHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose A Patient To Show Visits History");
+                return;
+            }
+            int selectedid = Convert.ToInt32(dataGridView1.CurrentRow.Cells["PatientID"].Value);
+
+            clsPatient pat = clsPatient.Find(selectedid);
+            ManageVisits frm = new ManageVisits(pat);
+
             this.Hide();
             frm.ShowDialog();
             this.Show();

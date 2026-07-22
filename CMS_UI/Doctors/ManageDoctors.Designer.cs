@@ -44,6 +44,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bookAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showDoctorAppointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.deActivateDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reActivateDoctorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -117,11 +118,12 @@
             this.toolStripSeparator3,
             this.bookAppointmentToolStripMenuItem,
             this.showDoctorAppointmentsToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.toolStripSeparator4,
             this.deActivateDoctorToolStripMenuItem,
             this.reActivateDoctorToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(222, 248);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(222, 270);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // toolStripSeparator1
@@ -187,6 +189,13 @@
             this.showDoctorAppointmentsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.showDoctorAppointmentsToolStripMenuItem.Text = "Show Doctor Appointments";
             this.showDoctorAppointmentsToolStripMenuItem.Click += new System.EventHandler(this.showDoctorAppointmentsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
+            this.toolStripMenuItem1.Text = "Show Doctor Visits History";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator4
             // 
@@ -352,5 +361,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem deActivateDoctorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reActivateDoctorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
