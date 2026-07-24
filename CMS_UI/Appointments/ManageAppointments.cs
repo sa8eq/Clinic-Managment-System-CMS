@@ -1,4 +1,5 @@
-﻿using CMSLogic;
+﻿using CMS_UI.Visits;
+using CMSLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -337,7 +338,18 @@ namespace CMS_UI.Appointments
         }
         private void startVisitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.CurrentRow == null || dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Choose Appointment To Start Its Visit");
+                return;
+            }
+            int appID = Convert.ToInt32(dataGridView1.CurrentRow.Cells["AppointmentID"].Value);
 
+            StartVisit frm = new StartVisit(appID);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+            Reload();
         }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {

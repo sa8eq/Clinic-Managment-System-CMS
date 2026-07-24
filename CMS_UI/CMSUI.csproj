@@ -211,6 +211,12 @@
     <Compile Include="Visits\ManageVisits.Designer.cs">
       <DependentUpon>ManageVisits.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visits\StartVisit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visits\StartVisit.Designer.cs">
+      <DependentUpon>StartVisit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visits\VisitInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visits\ManageVisits.resx">
       <DependentUpon>ManageVisits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visits\StartVisit.resx">
+      <DependentUpon>StartVisit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visits\VisitInfo.resx">
       <DependentUpon>VisitInfo.cs</DependentUpon>

@@ -48,8 +48,11 @@
     <Compile Include="clsInvoice.cs" />
     <Compile Include="clsInvoiceDetails.cs" />
     <Compile Include="clsMedicalService.cs" />
+    <Compile Include="clsMedicine.cs" />
     <Compile Include="clsPatient.cs" />
     <Compile Include="clsPerson.cs" />
+    <Compile Include="clsPrescription.cs" />
+    <Compile Include="clsPrescriptionDetails.cs" />
     <Compile Include="clsRole.cs" />
     <Compile Include="clsSpecialty.cs" />
     <Compile Include="clsUser.cs" />
