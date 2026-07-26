@@ -32,7 +32,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -64,7 +64,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -87,11 +87,11 @@ namespace CMSData
                     {
                         connection.Open();
                         command.ExecuteNonQuery();
-                        isDeletedSuccessfully = true; // تم التنفيذ بنجاح دون استثناءات (أخطاء)
+                        isDeletedSuccessfully = true; 
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }

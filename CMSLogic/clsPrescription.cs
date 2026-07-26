@@ -88,20 +88,13 @@ namespace CMSLogic
         }
         public static bool Delete(int prescriptionID)
         {
+            clsPrescriptionDetails.DeletePrescriptionDetailsByPrescriptionID(prescriptionID);
+
             return clsPrescriptionData.DeletePrescription(prescriptionID);
         }
         public static DataTable GetAllPrescriptions()
         {
             return clsPrescriptionData.GetAllPrescriptions();
-        }
-        public void AddPrescriptionDetail(int medicineID, string dosage, string duration)
-        {
-            clsPrescriptionDetails detail = new clsPrescriptionDetails();
-            detail.MedicineID = medicineID;
-            detail.Dosage = dosage;
-            detail.Duration = duration;
-            detail.MedicineInfo = clsMedicine.Find(medicineID); 
-            this.PrescriptionDetails.Add(detail);
         }
     }
 }

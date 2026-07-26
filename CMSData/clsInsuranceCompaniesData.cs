@@ -35,7 +35,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -66,7 +66,7 @@ namespace CMSData
                             InsuranceCompanyID = insertedID;
                         }
                     }
-                    catch (Exception ex) { throw new Exception(ex.Message); ; }
+                    catch (Exception ex) { clsLogger.LogDatabaseError(ex); }
                 }
             }
 
@@ -95,7 +95,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -121,7 +121,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -147,7 +147,7 @@ namespace CMSData
                             if (reader.HasRows) dt.Load(reader);
                         }
                     }
-                    catch (Exception ex) { throw new Exception(ex.Message); ; }
+                    catch (Exception ex) { clsLogger.LogDatabaseError(ex); }
                 }
             }
 
@@ -176,7 +176,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -206,7 +206,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -236,7 +236,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -278,7 +278,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }

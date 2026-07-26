@@ -37,7 +37,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // Handle exception
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -68,7 +68,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -100,7 +100,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -126,7 +126,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        return false;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -149,7 +149,7 @@ namespace CMSData
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
                     }
-                    catch (Exception ex) { throw new Exception("Error: " + ex.Message); }
+                    catch (Exception ex) { clsLogger.LogDatabaseError(ex); }
                 }
             }
             return (rowsAffected > 0);
@@ -177,7 +177,7 @@ namespace CMSData
                     }
                     catch(Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }

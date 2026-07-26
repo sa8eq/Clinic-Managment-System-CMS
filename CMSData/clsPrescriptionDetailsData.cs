@@ -30,7 +30,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -57,7 +57,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -80,7 +80,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -106,7 +106,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -131,11 +131,33 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
             return dt;
+        }
+        public static bool DeletePrescriptionDetailsByPrescriptionID(int prescriptionID)
+        {
+            int rowsAffected = 0;
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("delete from PrescriptionDetails where PrescriptionID = @PrescriptionID", connection))
+                {
+                    command.Parameters.AddWithValue("@PrescriptionID", prescriptionID);
+
+                    try
+                    {
+                        connection.Open();
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        clsLogger.LogDatabaseError(ex);
+                    }
+                }
+            }
+            return rowsAffected > 0;
         }
     }
 }

@@ -36,7 +36,6 @@ namespace CMSData
                                 Email = (string)reader["Email"];
                                 Address = (string)reader["Address"];
 
-                                // معالجة الحقول التي تقبل القيمة الفارغة (Null)
                                 SecondName = reader["SecondName"] == DBNull.Value ? "" : (string)reader["SecondName"];
                                 ThirdName = reader["ThirdName"] == DBNull.Value ? "" : (string)reader["ThirdName"];
                                 CreatedAt = reader["CreatedAt"] == DBNull.Value ? (DateTime?)null : (DateTime)reader["CreatedAt"];
@@ -45,7 +44,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -87,7 +86,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -124,7 +123,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -149,7 +148,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -179,7 +178,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -227,7 +226,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -257,7 +256,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -287,7 +286,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message); ;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }

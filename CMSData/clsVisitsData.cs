@@ -43,7 +43,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        isFound = false;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -85,7 +85,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        visitID = -1;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -123,7 +123,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        rowsAffected = 0;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -150,7 +150,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        rowsAffected = 0;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -182,7 +182,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        // يمكن إضافة تتبع للخطأ هنا
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -226,7 +226,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        isFound = false;
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }

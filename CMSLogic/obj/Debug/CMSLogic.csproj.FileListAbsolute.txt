@@ -7,3 +7,5 @@ C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع ما�
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.csproj.Up2Date
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.dll
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\obj\Debug\CMSLogic.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\bin\Debug\CMSLogger.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogic\bin\Debug\CMSLogger.pdb

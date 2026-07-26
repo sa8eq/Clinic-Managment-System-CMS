@@ -62,5 +62,11 @@
     <Compile Include="clsVisitsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMSLogger\CMSLogger.csproj">
+      <Project>{a77f1c7b-7561-434e-88b4-bcb611c90f16}</Project>
+      <Name>CMSLogger</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

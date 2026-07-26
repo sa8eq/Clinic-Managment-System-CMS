@@ -42,6 +42,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpVisitDiagnosis = new System.Windows.Forms.TabPage();
+            this.txtDiagnosis = new System.Windows.Forms.TextBox();
+            this.txtSymptoms = new System.Windows.Forms.TextBox();
             this.txtTemp = new System.Windows.Forms.TextBox();
             this.txtPulse = new System.Windows.Forms.TextBox();
             this.txtBP = new System.Windows.Forms.TextBox();
@@ -49,46 +51,48 @@
             this.lblAppointmentID = new System.Windows.Forms.Label();
             this.lblVisitID = new System.Windows.Forms.Label();
             this.tpPrescription = new System.Windows.Forms.TabPage();
-            this.tpRecommendedProceduresAndServices = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmbMeds = new System.Windows.Forms.ComboBox();
-            this.Dosage = new System.Windows.Forms.TextBox();
-            this.txtDuration = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.btnAddMedication = new System.Windows.Forms.Button();
+            this.txtNote = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.dgvMeds = new System.Windows.Forms.DataGridView();
             this.cmsMeds = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteMedicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAddMedication = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtDuration = new System.Windows.Forms.TextBox();
+            this.txtDosage = new System.Windows.Forms.TextBox();
+            this.cmbMeds = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tpRecommendedProceduresAndServices = new System.Windows.Forms.TabPage();
+            this.lblLineTotal = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.dgvService = new System.Windows.Forms.DataGridView();
+            this.cmsServices = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddService = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.cmbServices = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.cmsServices = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblLineTotal = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tpVisitDiagnosis.SuspendLayout();
             this.tpPrescription.SuspendLayout();
-            this.tpRecommendedProceduresAndServices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeds)).BeginInit();
             this.cmsMeds.SuspendLayout();
+            this.tpRecommendedProceduresAndServices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.cmsServices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -216,8 +220,8 @@
             // 
             // tpVisitDiagnosis
             // 
-            this.tpVisitDiagnosis.Controls.Add(this.textBox2);
-            this.tpVisitDiagnosis.Controls.Add(this.textBox1);
+            this.tpVisitDiagnosis.Controls.Add(this.txtDiagnosis);
+            this.tpVisitDiagnosis.Controls.Add(this.txtSymptoms);
             this.tpVisitDiagnosis.Controls.Add(this.txtTemp);
             this.tpVisitDiagnosis.Controls.Add(this.txtPulse);
             this.tpVisitDiagnosis.Controls.Add(this.txtBP);
@@ -241,12 +245,31 @@
             this.tpVisitDiagnosis.Text = "Visit / Diagnosis";
             this.tpVisitDiagnosis.UseVisualStyleBackColor = true;
             // 
+            // txtDiagnosis
+            // 
+            this.txtDiagnosis.Location = new System.Drawing.Point(498, 181);
+            this.txtDiagnosis.Multiline = true;
+            this.txtDiagnosis.Name = "txtDiagnosis";
+            this.txtDiagnosis.Size = new System.Drawing.Size(358, 131);
+            this.txtDiagnosis.TabIndex = 17;
+            this.txtDiagnosis.Validating += new System.ComponentModel.CancelEventHandler(this.txtDiagnosis_Validating);
+            // 
+            // txtSymptoms
+            // 
+            this.txtSymptoms.Location = new System.Drawing.Point(56, 181);
+            this.txtSymptoms.Multiline = true;
+            this.txtSymptoms.Name = "txtSymptoms";
+            this.txtSymptoms.Size = new System.Drawing.Size(336, 131);
+            this.txtSymptoms.TabIndex = 16;
+            this.txtSymptoms.Validating += new System.ComponentModel.CancelEventHandler(this.txtSymptoms_Validating);
+            // 
             // txtTemp
             // 
             this.txtTemp.Location = new System.Drawing.Point(794, 94);
             this.txtTemp.Name = "txtTemp";
             this.txtTemp.Size = new System.Drawing.Size(122, 23);
             this.txtTemp.TabIndex = 15;
+            this.txtTemp.Validating += new System.ComponentModel.CancelEventHandler(this.txtTemp_Validating);
             // 
             // txtPulse
             // 
@@ -254,6 +277,7 @@
             this.txtPulse.Name = "txtPulse";
             this.txtPulse.Size = new System.Drawing.Size(122, 23);
             this.txtPulse.TabIndex = 14;
+            this.txtPulse.Validating += new System.ComponentModel.CancelEventHandler(this.txtPulse_Validating);
             // 
             // txtBP
             // 
@@ -261,6 +285,7 @@
             this.txtBP.Name = "txtBP";
             this.txtBP.Size = new System.Drawing.Size(122, 23);
             this.txtBP.TabIndex = 13;
+            this.txtBP.Validating += new System.ComponentModel.CancelEventHandler(this.txtBP_Validating);
             // 
             // lblVisitDate
             // 
@@ -294,12 +319,14 @@
             // 
             // tpPrescription
             // 
+            this.tpPrescription.Controls.Add(this.txtNote);
+            this.tpPrescription.Controls.Add(this.label16);
             this.tpPrescription.Controls.Add(this.dgvMeds);
             this.tpPrescription.Controls.Add(this.btnAddMedication);
             this.tpPrescription.Controls.Add(this.label14);
             this.tpPrescription.Controls.Add(this.label13);
             this.tpPrescription.Controls.Add(this.txtDuration);
-            this.tpPrescription.Controls.Add(this.Dosage);
+            this.tpPrescription.Controls.Add(this.txtDosage);
             this.tpPrescription.Controls.Add(this.cmbMeds);
             this.tpPrescription.Controls.Add(this.label12);
             this.tpPrescription.Controls.Add(this.label11);
@@ -312,6 +339,131 @@
             this.tpPrescription.TabIndex = 1;
             this.tpPrescription.Text = "Prescription";
             this.tpPrescription.UseVisualStyleBackColor = true;
+            // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(158, 196);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(264, 58);
+            this.txtNote.TabIndex = 16;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(83, 196);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(42, 16);
+            this.label16.TabIndex = 15;
+            this.label16.Text = "Note:";
+            // 
+            // dgvMeds
+            // 
+            this.dgvMeds.AllowUserToAddRows = false;
+            this.dgvMeds.AllowUserToDeleteRows = false;
+            this.dgvMeds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMeds.ContextMenuStrip = this.cmsMeds;
+            this.dgvMeds.Location = new System.Drawing.Point(473, 30);
+            this.dgvMeds.Name = "dgvMeds";
+            this.dgvMeds.ReadOnly = true;
+            this.dgvMeds.Size = new System.Drawing.Size(446, 224);
+            this.dgvMeds.TabIndex = 14;
+            // 
+            // cmsMeds
+            // 
+            this.cmsMeds.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteMedicationToolStripMenuItem});
+            this.cmsMeds.Name = "cmsMeds";
+            this.cmsMeds.Size = new System.Drawing.Size(171, 26);
+            // 
+            // deleteMedicationToolStripMenuItem
+            // 
+            this.deleteMedicationToolStripMenuItem.Name = "deleteMedicationToolStripMenuItem";
+            this.deleteMedicationToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.deleteMedicationToolStripMenuItem.Text = "Delete Medication";
+            // 
+            // btnAddMedication
+            // 
+            this.btnAddMedication.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnAddMedication.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMedication.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAddMedication.Location = new System.Drawing.Point(392, 274);
+            this.btnAddMedication.Name = "btnAddMedication";
+            this.btnAddMedication.Size = new System.Drawing.Size(146, 41);
+            this.btnAddMedication.TabIndex = 13;
+            this.btnAddMedication.Text = "Add Medication";
+            this.btnAddMedication.UseVisualStyleBackColor = false;
+            this.btnAddMedication.Click += new System.EventHandler(this.btnAddMedication_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(428, 170);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(39, 16);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Days";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(428, 102);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(26, 16);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "mg";
+            // 
+            // txtDuration
+            // 
+            this.txtDuration.Location = new System.Drawing.Point(158, 167);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(264, 23);
+            this.txtDuration.TabIndex = 5;
+            this.txtDuration.Validating += new System.ComponentModel.CancelEventHandler(this.txtDuration_Validating);
+            // 
+            // txtDosage
+            // 
+            this.txtDosage.Location = new System.Drawing.Point(158, 99);
+            this.txtDosage.Name = "txtDosage";
+            this.txtDosage.Size = new System.Drawing.Size(264, 23);
+            this.txtDosage.TabIndex = 4;
+            this.txtDosage.Validating += new System.ComponentModel.CancelEventHandler(this.txtDosage_Validating);
+            // 
+            // cmbMeds
+            // 
+            this.cmbMeds.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMeds.FormattingEnabled = true;
+            this.cmbMeds.Location = new System.Drawing.Point(158, 30);
+            this.cmbMeds.Name = "cmbMeds";
+            this.cmbMeds.Size = new System.Drawing.Size(264, 21);
+            this.cmbMeds.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(57, 170);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 16);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Duration:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(65, 102);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 16);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Dosage:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Medication:";
             // 
             // tpRecommendedProceduresAndServices
             // 
@@ -334,150 +486,36 @@
             this.tpRecommendedProceduresAndServices.Text = "Recommended Procedures / Services";
             this.tpRecommendedProceduresAndServices.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // lblLineTotal
             // 
-            this.button1.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(778, 469);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 46);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblLineTotal.AutoSize = true;
+            this.lblLineTotal.Location = new System.Drawing.Point(155, 238);
+            this.lblLineTotal.Name = "lblLineTotal";
+            this.lblLineTotal.Size = new System.Drawing.Size(34, 16);
+            this.lblLineTotal.TabIndex = 27;
+            this.lblLineTotal.Text = "###";
             // 
-            // button2
+            // lblPrice
             // 
-            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(609, 469);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 46);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Close";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(155, 170);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(34, 16);
+            this.lblPrice.TabIndex = 26;
+            this.lblPrice.Text = "###";
             // 
-            // textBox1
+            // nudQuantity
             // 
-            this.textBox1.Location = new System.Drawing.Point(56, 181);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(336, 131);
-            this.textBox1.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(498, 181);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(358, 131);
-            this.textBox2.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(43, 34);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 16);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Medication:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(65, 134);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 16);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Dosage:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(57, 234);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 16);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Duration:";
-            // 
-            // cmbMeds
-            // 
-            this.cmbMeds.FormattingEnabled = true;
-            this.cmbMeds.Location = new System.Drawing.Point(158, 30);
-            this.cmbMeds.Name = "cmbMeds";
-            this.cmbMeds.Size = new System.Drawing.Size(264, 24);
-            this.cmbMeds.TabIndex = 3;
-            // 
-            // Dosage
-            // 
-            this.Dosage.Location = new System.Drawing.Point(158, 131);
-            this.Dosage.Name = "Dosage";
-            this.Dosage.Size = new System.Drawing.Size(264, 23);
-            this.Dosage.TabIndex = 4;
-            // 
-            // txtDuration
-            // 
-            this.txtDuration.Location = new System.Drawing.Point(158, 231);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(264, 23);
-            this.txtDuration.TabIndex = 5;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(428, 134);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(26, 16);
-            this.label13.TabIndex = 6;
-            this.label13.Text = "mg";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(428, 234);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 16);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "Days";
-            // 
-            // btnAddMedication
-            // 
-            this.btnAddMedication.BackColor = System.Drawing.Color.MidnightBlue;
-            this.btnAddMedication.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddMedication.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAddMedication.Location = new System.Drawing.Point(392, 274);
-            this.btnAddMedication.Name = "btnAddMedication";
-            this.btnAddMedication.Size = new System.Drawing.Size(146, 41);
-            this.btnAddMedication.TabIndex = 13;
-            this.btnAddMedication.Text = "Add Medication";
-            this.btnAddMedication.UseVisualStyleBackColor = false;
-            // 
-            // dgvMeds
-            // 
-            this.dgvMeds.AllowUserToAddRows = false;
-            this.dgvMeds.AllowUserToDeleteRows = false;
-            this.dgvMeds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMeds.ContextMenuStrip = this.cmsMeds;
-            this.dgvMeds.Location = new System.Drawing.Point(505, 30);
-            this.dgvMeds.Name = "dgvMeds";
-            this.dgvMeds.ReadOnly = true;
-            this.dgvMeds.Size = new System.Drawing.Size(414, 224);
-            this.dgvMeds.TabIndex = 14;
-            // 
-            // cmsMeds
-            // 
-            this.cmsMeds.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteMedicationToolStripMenuItem});
-            this.cmsMeds.Name = "cmsMeds";
-            this.cmsMeds.Size = new System.Drawing.Size(171, 26);
-            // 
-            // deleteMedicationToolStripMenuItem
-            // 
-            this.deleteMedicationToolStripMenuItem.Name = "deleteMedicationToolStripMenuItem";
-            this.deleteMedicationToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.deleteMedicationToolStripMenuItem.Text = "Delete Medication";
+            this.nudQuantity.Location = new System.Drawing.Point(158, 99);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(264, 23);
+            this.nudQuantity.TabIndex = 25;
+            this.nudQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudQuantity.ValueChanged += new System.EventHandler(this.nudQuantity_ValueChanged);
             // 
             // dgvService
             // 
@@ -485,11 +523,24 @@
             this.dgvService.AllowUserToDeleteRows = false;
             this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvService.ContextMenuStrip = this.cmsServices;
-            this.dgvService.Location = new System.Drawing.Point(505, 30);
+            this.dgvService.Location = new System.Drawing.Point(474, 30);
             this.dgvService.Name = "dgvService";
             this.dgvService.ReadOnly = true;
-            this.dgvService.Size = new System.Drawing.Size(414, 224);
+            this.dgvService.Size = new System.Drawing.Size(445, 224);
             this.dgvService.TabIndex = 24;
+            // 
+            // cmsServices
+            // 
+            this.cmsServices.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
+            this.cmsServices.Name = "cmsMeds";
+            this.cmsServices.Size = new System.Drawing.Size(171, 26);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.toolStripMenuItem1.Text = "Delete Medication";
             // 
             // btnAddService
             // 
@@ -502,6 +553,7 @@
             this.btnAddService.TabIndex = 23;
             this.btnAddService.Text = "Add Service";
             this.btnAddService.UseVisualStyleBackColor = false;
+            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
             // 
             // label15
             // 
@@ -514,11 +566,13 @@
             // 
             // cmbServices
             // 
+            this.cmbServices.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbServices.FormattingEnabled = true;
             this.cmbServices.Location = new System.Drawing.Point(158, 30);
             this.cmbServices.Name = "cmbServices";
-            this.cmbServices.Size = new System.Drawing.Size(264, 24);
+            this.cmbServices.Size = new System.Drawing.Size(264, 21);
             this.cmbServices.TabIndex = 18;
+            this.cmbServices.SelectedIndexChanged += new System.EventHandler(this.cmbServices_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -547,49 +601,35 @@
             this.label19.TabIndex = 15;
             this.label19.Text = "Service:";
             // 
-            // cmsServices
+            // btnSave
             // 
-            this.cmsServices.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.cmsServices.Name = "cmsMeds";
-            this.cmsServices.Size = new System.Drawing.Size(171, 26);
+            this.btnSave.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSave.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnSave.Location = new System.Drawing.Point(778, 469);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(163, 46);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // toolStripMenuItem1
+            // button2
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
-            this.toolStripMenuItem1.Text = "Delete Medication";
+            this.button2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.button2.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(609, 469);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(163, 46);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Close";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // nudQuantity
+            // error
             // 
-            this.nudQuantity.Enabled = false;
-            this.nudQuantity.Location = new System.Drawing.Point(158, 99);
-            this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(264, 23);
-            this.nudQuantity.TabIndex = 25;
-            this.nudQuantity.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Location = new System.Drawing.Point(155, 170);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(34, 16);
-            this.lblPrice.TabIndex = 26;
-            this.lblPrice.Text = "###";
-            // 
-            // lblLineTotal
-            // 
-            this.lblLineTotal.AutoSize = true;
-            this.lblLineTotal.Location = new System.Drawing.Point(155, 238);
-            this.lblLineTotal.Name = "lblLineTotal";
-            this.lblLineTotal.Size = new System.Drawing.Size(34, 16);
-            this.lblLineTotal.TabIndex = 27;
-            this.lblLineTotal.Text = "###";
+            this.error.ContainerControl = this;
             // 
             // StartVisit
             // 
@@ -597,13 +637,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 527);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartVisit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StartVisit";
+            this.Load += new System.EventHandler(this.StartVisit_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -612,13 +653,14 @@
             this.tpVisitDiagnosis.PerformLayout();
             this.tpPrescription.ResumeLayout(false);
             this.tpPrescription.PerformLayout();
-            this.tpRecommendedProceduresAndServices.ResumeLayout(false);
-            this.tpRecommendedProceduresAndServices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMeds)).EndInit();
             this.cmsMeds.ResumeLayout(false);
+            this.tpRecommendedProceduresAndServices.ResumeLayout(false);
+            this.tpRecommendedProceduresAndServices.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.cmsServices.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -639,7 +681,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpVisitDiagnosis;
         private System.Windows.Forms.TabPage tpPrescription;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TabPage tpRecommendedProceduresAndServices;
         private System.Windows.Forms.Label lblVisitID;
@@ -648,12 +690,12 @@
         private System.Windows.Forms.TextBox txtPulse;
         private System.Windows.Forms.TextBox txtBP;
         private System.Windows.Forms.Label lblVisitDate;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDiagnosis;
+        private System.Windows.Forms.TextBox txtSymptoms;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtDuration;
-        private System.Windows.Forms.TextBox Dosage;
+        private System.Windows.Forms.TextBox txtDosage;
         private System.Windows.Forms.ComboBox cmbMeds;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -674,5 +716,8 @@
         private System.Windows.Forms.NumericUpDown nudQuantity;
         private System.Windows.Forms.Label lblLineTotal;
         private System.Windows.Forms.Label lblPrice;
+        private System.Windows.Forms.TextBox txtNote;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

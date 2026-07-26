@@ -33,7 +33,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -60,7 +60,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -84,7 +84,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -117,8 +117,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        isFound = false;
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -144,7 +143,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }

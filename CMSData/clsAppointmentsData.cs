@@ -39,7 +39,7 @@ namespace CMSData
                         if (result != null && int.TryParse(result.ToString(), out int insertedID))
                             appointmentID = insertedID;
                     }
-                    catch (Exception ex) { throw new Exception("Error in AddNewAppointment: " + ex.Message); }
+                    catch (Exception ex) { clsLogger.LogDatabaseError(ex); }
                 }
             }
             return appointmentID;
@@ -70,7 +70,7 @@ namespace CMSData
                         connection.Open();
                         rowsAffected = command.ExecuteNonQuery();
                     }
-                    catch (Exception ex) { throw new Exception("Error in UpdateAppointment: " + ex.Message); }
+                    catch (Exception ex) { clsLogger.LogDatabaseError(ex); }
                 }
             }
             return (rowsAffected > 0);
@@ -99,11 +99,11 @@ namespace CMSData
                                 appointmentDate = (DateTime)reader["AppointmentDate"];
                                 status = reader["Status"].ToString();
                                 notes = reader["Notes"] == DBNull.Value ? "" : reader["Notes"].ToString();
-                                serviceID = (int)reader["ServiceID"]; // قراءة القيمة من الداتابيز
+                                serviceID = (int)reader["ServiceID"]; 
                             }
                         }
                     }
-                    catch (Exception ex) { throw new Exception("Error in GetAppointmentByID: " + ex.Message); }
+                    catch (Exception ex) { clsLogger.LogDatabaseError(ex); }
                 }
             }
             return isFound;
@@ -131,7 +131,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error in GetAllAppointments: " + ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -165,7 +165,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception("Error in CheckAppointmentConflict: " + ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }
@@ -205,7 +205,7 @@ namespace CMSData
                     }
                     catch (Exception ex)
                     {
-                        throw new Exception(ex.Message);
+                        clsLogger.LogDatabaseError(ex);
                     }
                 }
             }

@@ -28,6 +28,7 @@ namespace CMSLogic
             this.MedicineName = medicineName;
             this.ActiveIngredient = activeIngredient;
             this.Form = form;
+
             this.Mode = enMode.Update;
         }
         private bool _AddNewMedicine()

@@ -4,3 +4,6 @@ C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع ما�
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSData\obj\Debug\CMSData.csproj.CoreCompileInputs.cache
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSData\obj\Debug\CMSData.dll
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSData\obj\Debug\CMSData.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSData\bin\Debug\CMSLogger.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSData\bin\Debug\CMSLogger.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSData\obj\Debug\CMSData.csproj.Up2Date

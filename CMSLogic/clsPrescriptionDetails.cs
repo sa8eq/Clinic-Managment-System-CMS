@@ -13,9 +13,17 @@ namespace CMSLogic
         public int PrescriptionDetailID { get; set; }
         public int PrescriptionID { get; set; }
         public int MedicineID { get; set; }
-
         public clsMedicine MedicineInfo { get; set; }
+        public string MedicineName
+        {
+            get
+            {
+                if (MedicineInfo != null)
+                    return MedicineInfo.MedicineName;
 
+                return clsMedicine.Find(this.MedicineID)?.MedicineName;
+            }
+        }
         public string Dosage { get; set; }
         public string Duration { get; set; }
 
@@ -97,6 +105,11 @@ namespace CMSLogic
         public static DataTable GetAllPrescriptionDetails()
         {
             return clsPrescriptionDetailsData.GetAllPrescriptionDetails();
+        }
+
+        public static bool DeletePrescriptionDetailsByPrescriptionID(int prescriptionID)
+        {
+            return clsPrescriptionDetailsData.DeletePrescriptionDetailsByPrescriptionID(prescriptionID);
         }
     }
 }

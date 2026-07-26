@@ -17,6 +17,14 @@ namespace CMSLogic
         public int InvoiceDetailID { get; set; }
         public int InvoiceID { get; set; }
         public int ServiceID { get; set; }
+        public string ServiceName
+        {
+            get
+            {
+                return clsMedicalService.Find(this.ServiceID)?.ServiceName;
+            }
+        }
+
         public int Quantity { get; set; }
         public decimal Price { get; set; }
 
@@ -24,7 +32,6 @@ namespace CMSLogic
         {
             get { return Quantity * Price; }
         }
-
         public clsInvoiceDetails()
         {
             this.InvoiceDetailID = -1;

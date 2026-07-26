@@ -1,0 +1,6 @@
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogger\bin\Debug\CMSLogger.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogger\bin\Debug\CMSLogger.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogger\obj\Debug\CMSLogger.csproj.AssemblyReference.cache
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogger\obj\Debug\CMSLogger.csproj.CoreCompileInputs.cache
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogger\obj\Debug\CMSLogger.dll
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMSLogger\obj\Debug\CMSLogger.pdb
