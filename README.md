@@ -1,8 +1,14 @@
+
 # Clinic Management System (CMS)
 
 A comprehensive desktop application for managing clinic operations including patient records, doctor schedules, appointments, visits, prescriptions, invoices, and insurance processing. Built with a clean 3-tier architecture using C# WinForms and SQL Server.
 
 ---
+<img width="948" height="521" alt="لقطة شاشة 2026-07-27 152355" src="https://github.com/user-attachments/assets/ae3eeb73-08bf-41a0-ad48-e94d364d5bf0" />
+<img width="951" height="520" alt="لقطة شاشة 2026-07-27 152515" src="https://github.com/user-attachments/assets/d197e7e4-0d17-4653-9c3c-788a8f187bfa" />
+<img width="950" height="526" alt="لقطة شاشة 2026-07-27 152504" src="https://github.com/user-attachments/assets/f6544bbf-0d0a-4cb0-a285-24fd7c4f2e9c" />
+<img width="947" height="526" alt="لقطة شاشة 2026-07-27 152432" src="https://github.com/user-attachments/assets/2bdf618f-f3dd-49d4-a825-fa469623f744" />
+<img width="949" height="522" alt="لقطة شاشة 2026-07-27 152410" src="https://github.com/user-attachments/assets/df3bc52c-2b3e-4756-a908-bb0e67fdcb49" />
 
 ## Table of Contents
 
