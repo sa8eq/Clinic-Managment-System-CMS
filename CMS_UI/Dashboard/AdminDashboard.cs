@@ -49,16 +49,14 @@ namespace CMS_UI
             {
                 btnUsers.Enabled = false;
                 btnDoctors.Enabled = false;
-                btnSettings.Enabled = false;
-                btnReports.Enabled = false;
+
                 btnVisits.Enabled = false;
                 btnDepartments.Enabled = false;
 
                 btnDepartments.Visible = false;
                 btnUsers.Visible = false;
                 btnDoctors.Visible = false;
-                btnSettings.Visible = false;
-                btnReports.Visible = false;
+
                 btnVisits.Visible = false;
             }
 
@@ -67,8 +65,7 @@ namespace CMS_UI
                 btnUsers.Enabled = false;
                 btnDoctors.Enabled = false;
                 btnInvoices.Enabled = false;
-                btnSettings.Enabled = false;
-                btnReports.Enabled = false;
+
                 btnInsuranceCompanies.Enabled = false;
                 btnDepartments.Enabled = false;
 
@@ -77,8 +74,7 @@ namespace CMS_UI
                 btnUsers.Visible = false;
                 btnDoctors.Visible = false;
                 btnInvoices.Visible = false;
-                btnSettings.Visible = false;
-                btnReports.Visible = false;
+
                 btnInsuranceCompanies.Visible = false;
             }
         }

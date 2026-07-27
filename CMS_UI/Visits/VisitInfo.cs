@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,6 +60,14 @@ namespace CMS_UI.Visits
             lblDoctorContactNumber.Text = vis.AppointmentInfo.DoctorInfo.PersonInfo.Phone;
             lblLicenseNumber.Text = vis.AppointmentInfo.DoctorInfo.LicenseNumber;
             lblSpecialty.Text = vis.AppointmentInfo.DoctorInfo.DoctorSpecialty.SpecialtyName;
+        }
+
+        private void btnRecomendationDetails_Click(object sender, EventArgs e)
+        {
+            PrescriptionInfo frm = new PrescriptionInfo(_VisitID);
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using CMS_UI.Visits;
+﻿using CMS_UI.Global;
+using CMS_UI.Visits;
 using CMSLogic;
 using System;
 using System.Collections.Generic;
@@ -87,6 +88,15 @@ namespace CMS_UI.Appointments
             txtFilterValue.Enabled = false;
             cmbDepartment.Enabled = false;
 
+            if (clsCurrentUser.CurrentUser.UserRole.RoleName == "Doctor")
+            {
+                cmbFilterBy.SelectedItem = "Doctor Name";
+                txtFilterValue.Text = clsCurrentUser.CurrentUser.PersonInfo.FullName;
+
+                cmbFilterBy.Enabled = false;
+                txtFilterValue.Enabled = false;
+                cmbDepartment.Enabled = false;
+            }
             UpdateCount();
 
 
@@ -129,6 +139,9 @@ namespace CMS_UI.Appointments
                 btnAddNewAppointment.Enabled = false;
 
             }
+
+            
+
         }
         private void ApplyFilter()
         {

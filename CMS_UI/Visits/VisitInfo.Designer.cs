@@ -555,6 +555,7 @@
             this.btnRecomendationDetails.TabIndex = 7;
             this.btnRecomendationDetails.Text = "Recommended Treatment Details";
             this.btnRecomendationDetails.UseVisualStyleBackColor = false;
+            this.btnRecomendationDetails.Click += new System.EventHandler(this.btnRecomendationDetails_Click);
             // 
             // VisitInfo
             // 

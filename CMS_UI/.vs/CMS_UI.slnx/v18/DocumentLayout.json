@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\prescriptioninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:prescriptioninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\dashboard\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:dashboard\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\visits\\visitinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:visits\\visitinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\dashboard\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:dashboard\\admindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|c:\\users\\sadeq\\desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\cms\\cms_ui\\patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0F4C29D3-FB6A-46EB-B3BA-3496BD93622B}|CMSUI.csproj|solutionrelative:patients\\managepatients.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,27 +38,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VisitInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Visits\\VisitInfo.cs",
-              "RelativeDocumentMoniker": "Visits\\VisitInfo.cs",
-              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Visits\\VisitInfo.cs [Design]",
-              "RelativeToolTip": "Visits\\VisitInfo.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "AdminDashboard.cs",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Dashboard\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "Dashboard\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Dashboard\\AdminDashboard.cs",
+              "RelativeToolTip": "Dashboard\\AdminDashboard.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAtwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T12:58:46.591Z",
+              "WhenOpened": "2026-07-27T10:41:41.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminDashboard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Dashboard\\AdminDashboard.cs",
+              "RelativeDocumentMoniker": "Dashboard\\AdminDashboard.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Dashboard\\AdminDashboard.cs [Design]",
+              "RelativeToolTip": "Dashboard\\AdminDashboard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T10:34:41.965Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PrescriptionInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\PrescriptionInfo.cs",
-              "RelativeDocumentMoniker": "PrescriptionInfo.cs",
-              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\PrescriptionInfo.cs [Design]",
-              "RelativeToolTip": "PrescriptionInfo.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "ManagePatients.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs",
+              "RelativeDocumentMoniker": "Patients\\ManagePatients.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs [Design]",
+              "RelativeToolTip": "Patients\\ManagePatients.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-26T12:56:44.29Z",
+              "WhenOpened": "2026-07-27T10:29:24.304Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ManagePatients.cs",
+              "DocumentMoniker": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs",
+              "RelativeDocumentMoniker": "Patients\\ManagePatients.cs",
+              "ToolTip": "C:\\Users\\sadeq\\Desktop\\\u0643\u0648\u0631\u0633\u0627\u062A \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\\u0645\u0634\u0627\u0631\u064A\u0639 \u0645\u0627\u0628\u0639\u062F \u0627\u0644\u062E\u0627\u0631\u0637\u0629\\CMS\\CMS_UI\\Patients\\ManagePatients.cs",
+              "RelativeToolTip": "Patients\\ManagePatients.cs",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAANAAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T10:24:55.591Z",
+              "EditorCaption": ""
             }
           ]
         }

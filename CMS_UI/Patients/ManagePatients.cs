@@ -1,4 +1,5 @@
 ﻿using CMS_UI.Appointments;
+using CMS_UI.Global;
 using CMS_UI.Invoices;
 using CMS_UI.Visits;
 using CMSLogic;
@@ -51,6 +52,14 @@ namespace CMS_UI.Patients
                 dataGridView1.Columns["EmergencyContactPhone"].Width = 180;
 
                 lblCount.Text = '#' + dataGridView1.Rows.Count.ToString();
+            }
+            if (clsCurrentUser.CurrentUser.UserRole.RoleName == "Doctor")
+            {
+                btnAddNewPatient.Enabled = false;
+                cmbFilterBy.Enabled = false;
+                cmbFilterBy.SelectedItem = "None";
+                txtFilter.Enabled = false;
+                contextMenuStrip1.Enabled = false;
             }
 
             cmbFilterBy.SelectedItem = "None";
@@ -190,8 +199,27 @@ namespace CMS_UI.Patients
         {
             if (dataGridView1.Rows.Count == 0 || dataGridView1.CurrentRow == null)
             {
-                contextMenuStrip1.Enabled = false;
+                showPatientInformationToolStripMenuItem.Enabled = false;
+                editPatientInformationToolStripMenuItem.Enabled = false;
+                addNewPatientToolStripMenuItem.Enabled = false;
+                bookNewAppointmentToolStripMenuItem.Enabled = false;
+                showAppointmentsHistoryToolStripMenuItem.Enabled = false;
+                showVisitsHistoryToolStripMenuItem.Enabled = false;
+                showPriscribtionHistoryToolStripMenuItem.Enabled = false;
+                invoicesAndPaymentsToolStripMenuItem.Enabled = false;
                 return;
+            }
+            if (clsCurrentUser.CurrentUser.UserRole.RoleName == "Doctor")
+            {
+                showPatientInformationToolStripMenuItem.Enabled = false;
+                editPatientInformationToolStripMenuItem.Enabled = false;
+                addNewPatientToolStripMenuItem.Enabled = false;
+                bookNewAppointmentToolStripMenuItem.Enabled = false;
+                showAppointmentsHistoryToolStripMenuItem.Enabled = false;
+                showVisitsHistoryToolStripMenuItem.Enabled = false;
+                showPriscribtionHistoryToolStripMenuItem.Enabled = false;
+                invoicesAndPaymentsToolStripMenuItem.Enabled = false;
+
             }
             contextMenuStrip1.Enabled = true;
         }

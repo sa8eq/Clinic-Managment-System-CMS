@@ -114,12 +114,18 @@ namespace CMS_UI.Visits
                 MessageBox.Show("Some Fields In Prescription Tab Are Mandatory, Fill Them To Be Able To Save The Visit");
                 return;
             }
+            if(_PrescriptionList.Any(s=>s.MedicineID== Convert.ToInt32(cmbMeds.SelectedValue)))
+            {
+                MessageBox.Show("This Medication Is Already Added");
+                return;
+            }
             clsPrescriptionDetails pre = new clsPrescriptionDetails
             {
                 MedicineID = Convert.ToInt32(cmbMeds.SelectedValue),
                 Dosage = txtDosage.Text,
                 Duration = txtDuration.Text
             };
+
             _PrescriptionList.Add(pre);
 
             txtDuration.Text = "";
@@ -459,6 +465,43 @@ namespace CMS_UI.Visits
                 
                 LockForm();
             }
+        }
+        private void deleteMedicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvMeds.CurrentRow == null || dgvMeds.CurrentRow.IsNewRow)
+            {
+                MessageBox.Show("Please Choose A Medicine To delete From Prescription", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string med = dgvMeds.CurrentRow.Cells["MedicineName"].Value?.ToString() ?? string.Empty;
+
+            if (string.IsNullOrEmpty(med))
+            {
+                MessageBox.Show("Please Choose A Medicine To delete From Prescription", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            _PrescriptionList.RemoveAll(i=>i.MedicineName == med);
+            dgvMedsSetup();
+
+        }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (dgvService.CurrentRow == null || dgvService.CurrentRow.IsNewRow)
+            {
+                MessageBox.Show("Please Choose A Service To delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string serv = dgvService.CurrentRow.Cells["ServiceName"].Value?.ToString() ?? string.Empty;
+
+            if (string.IsNullOrEmpty(serv))
+            {
+                MessageBox.Show("Please Choose A Service To delete", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            _ServicesList.RemoveAll(i => i.ServiceName == serv);
+            dgvServicesSetup();
         }
     }
 }

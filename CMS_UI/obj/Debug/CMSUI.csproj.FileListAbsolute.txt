@@ -42,3 +42,4 @@ C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع ما�
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.Visits.StartVisit.resources
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMSLogger.dll
 C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\bin\Debug\CMSLogger.pdb
+C:\Users\sadeq\Desktop\كورسات مابعد الخارطة\مشاريع مابعد الخارطة\CMS\CMS_UI\obj\Debug\CMS_UI.PrescriptionInfo.resources

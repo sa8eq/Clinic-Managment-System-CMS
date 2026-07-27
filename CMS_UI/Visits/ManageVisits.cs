@@ -1,4 +1,5 @@
 ﻿using CMS_UI.Doctors;
+using CMS_UI.Global;
 using CMS_UI.Patients;
 using CMSLogic;
 using System;
@@ -75,8 +76,17 @@ namespace CMS_UI.Visits
             {
                 cmbFilter.SelectedItem = "None";
             }
+            if (clsCurrentUser.CurrentUser.UserRole.RoleName == "Doctor")
+            {
+                cmbFilter.SelectedItem = "Doctor Name";
+                txtFilter.Text = clsCurrentUser.CurrentUser.PersonInfo.FullName;
 
+                cmbFilter.Enabled = false;
+                txtFilter.Enabled = false;
+            }
             lblCount.Text = "#" + dataGridView1.Rows.Count;
+
+
         }
         private void Manage_Visits_Load(object sender, EventArgs e)
         {
@@ -97,6 +107,9 @@ namespace CMS_UI.Visits
                 cmbFilter.Enabled = false;
                 txtFilter.Enabled = false;
             }
+
+
+            
         }
         private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {

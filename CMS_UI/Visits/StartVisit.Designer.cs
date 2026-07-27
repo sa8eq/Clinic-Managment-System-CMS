@@ -381,6 +381,7 @@
             this.deleteMedicationToolStripMenuItem.Name = "deleteMedicationToolStripMenuItem";
             this.deleteMedicationToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.deleteMedicationToolStripMenuItem.Text = "Delete Medication";
+            this.deleteMedicationToolStripMenuItem.Click += new System.EventHandler(this.deleteMedicationToolStripMenuItem_Click);
             // 
             // btnAddMedication
             // 
@@ -534,13 +535,14 @@
             this.cmsServices.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.cmsServices.Name = "cmsMeds";
-            this.cmsServices.Size = new System.Drawing.Size(171, 26);
+            this.cmsServices.Size = new System.Drawing.Size(181, 48);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
-            this.toolStripMenuItem1.Text = "Delete Medication";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "Delete Service";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // btnAddService
             // 
